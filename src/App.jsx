@@ -11,7 +11,7 @@ import {
   Register,
 } from "./pages";
 
-import { Navbar } from "./layout";
+import { Navbar, Pages } from "./layout";
 
 function App() {
   return (
@@ -20,18 +20,18 @@ function App() {
         <div>
           <div className="static ">
             <Navbar />
-            <Home />
           </div>
-          <div className="pt-16">
+          <div className="">
             <Routes>
-              <Route path="/Dashboard" element={<Dashboard />}></Route>
-              <Route path="/EditJob" element={<EditJob />}></Route>
-              <Route path="/Home" element={<Home />}></Route>
-              <Route path="/JobDetails" element={<JobDetails />}></Route>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/Pages" element={<Pages />}></Route>
               <Route path="/Jobs" element={<Jobs />}></Route>
-              <Route path="/Login" element={<Login />}></Route>
               <Route path="/PostJob" element={<PostJob />}></Route>
+              <Route path="/Login" element={<Login />}></Route>
               <Route path="/Register" element={<Register />}></Route>
+              <Route path="/JobDetails" element={<JobDetails />}></Route>
+              <Route path="/EditJob" element={<EditJob />}></Route>
+              <Route path="/Dashboard" element={<Dashboard />}></Route>
             </Routes>
           </div>
         </div>
