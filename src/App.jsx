@@ -15,7 +15,7 @@ import { Navbar, Pages } from "./layout";
 
 function App() {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <BrowserRouter>
         <div>
           <div className="static ">

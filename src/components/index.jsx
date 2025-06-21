@@ -6,5 +6,5 @@ export { default as JobDetails } from "./JobDetails";
 export { default as JobFilter } from "./JobFilter";
 export { default as JobForm } from "./JobForm";
 export { default as JobList } from "./JobList";
-export { default as Navbar } from "./Navbar";
 export { default as Select } from "./Select";
+export { default as SearchBar } from "./SearchBar";
