@@ -1,13 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ color, bgColor, padding, size, text, borderRadius }) => {
+const Button = ({
+  color,
+  bgColor,
+  padding,
+  size,
+  text,
+  className = "",
+  borderRadius,
+  ...props
+}) => {
   return (
     <div>
       <button
         type="button"
         style={{ backgroundColor: bgColor, color, borderRadius, padding }}
-        className={` text-${size} p-2 hover:drop-shadow-sm `}
+        className={` text-${size} p-2 hover:drop-shadow-sm ${className} `}
+        {...props}
       >
         {text}
       </button>

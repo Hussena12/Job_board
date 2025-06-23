@@ -6,10 +6,27 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "light-bg": "url('/light_bg.jpg')",
+        "dark-bg": "url('/dark_bg.jpg')",
+      },
+      backgroundColor: {
+        "main-bg": "#FAFBFB",
+        "main-dark-bg": "#20232A",
+        "secondary-dark-bg": "#33373E",
+        "light-gray": "#F7F7F7",
+        "half-transparent": "rgba(0, 0, 0, 0.5)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      borderWidth: {
+        1: "1px",
+      },
+      borderColor: {
+        color: "rgba(0, 0, 0, 0.1)",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

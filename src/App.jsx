@@ -12,12 +12,14 @@ import {
 } from "./pages";
 
 import { Navbar, Pages } from "./layout";
+import { useStateContext } from "./contexts/useStateContext";
 
 function App() {
+  const { currentMode } = useStateContext();
   return (
-    <div className="w-full ">
+    <div className={currentMode === "Dark" ? "dark " : ""}>
       <BrowserRouter>
-        <div>
+        <div className="dark:bg-main-dark-bg">
           <div className="static ">
             <Navbar />
           </div>

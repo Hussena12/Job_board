@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components";
+import { useStateContext } from "../contexts/useStateContext";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
   return (
-    <>
-      <header className="bg-white  shadow p-4 px-2 w-full">
+    <div>
+      <header className="bg-white shadow p-4 px-2 w-full  dark:bg-[#1f1f1f] dark:text-white ">
         <div className=" static navbar flex  gap-24 md:mx-12 mx-4 justify-between ">
           <div className="flex text-xl font-bold mr-8 items-center">GEtjob</div>
 
@@ -44,8 +45,11 @@ const Navbar = () => {
             </div>
           </nav>
 
-          <div className="md:hidden flex  items-center text-3xl flex-end">
-            <button className="z-20" onClick={() => setIsOpen(!isOpen)}>
+          <div className="md:hidden flex  items-center text-3xl flex-end z-20">
+            <button
+              className={isOpen ? "dark:text-gray-200" : ""}
+              onClick={() => setIsOpen(!isOpen)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -72,49 +76,103 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
-        {/* mobile view  */}
       </header>
 
-      <div className="bg-half-transparent w-full">
+      {/* mobile view  */}
+
+      <>
         <div
-          className={`fixed md:hidden min-h-screen w-2/3 shadow-xl bg-white right-0 top-0 transform transition-transform duration-300 ease-in-out z-10 ${
+          className={`fixed md:hidden min-h-screen w-2/3 shadow-xl bg-white dark:bg-[#181818] right-0 top-0 transform transition-transform duration-300 ease-in-out z-10  ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } `}
         >
-          <div className="flex flex-col justify-center items-center py-24 gap-6  ">
-            <Link
-              className="hover:text-gray-700"
-              to="/"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              className="hover:text-gray-700"
-              to="/Pages"
-              onClick={() => setIsOpen(false)}
-            >
-              Pages
-            </Link>
-            <Link
-              className="hover:text-gray-700"
-              to="/Jobs"
-              onClick={() => setIsOpen(false)}
-            >
-              Jobs
-            </Link>
-            <Link
-              className="hover:text-gray-700"
-              to="/PostJob"
-              onClick={() => setIsOpen(false)}
-            >
-              Post
-            </Link>
+          <div className=" m-6">
+            <div className="flex flex-col justify-center items-center pt-24 pb-8 gap-6 dark:text-gray-200 ">
+              <Link
+                className="hover:text-gray-700"
+                to="/"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                className="hover:text-gray-700"
+                to="/Pages"
+                onClick={() => setIsOpen(false)}
+              >
+                Pages
+              </Link>
+              <Link
+                className="hover:text-gray-700 "
+                to="/Jobs"
+                onClick={() => setIsOpen(false)}
+              >
+                Jobs
+              </Link>
+              <Link
+                className="hover:text-gray-700"
+                to="/PostJob"
+                onClick={() => setIsOpen(false)}
+              >
+                Post
+              </Link>
+            </div>
+
+            <div className="mt-6 border-t-1 border-color p-4 m-4">
+              <p className="font-semibold text-lg dark:text-gray-200">
+                Theme Options
+              </p>
+
+              <div className="flex gap-2 dark:text-gray-200">
+                <input
+                  id="light"
+                  type="radio"
+                  name="theme"
+                  value="Light"
+                  onChange={setMode}
+                  className="cursor-pointer"
+                  checked={currentMode === "Light"}
+                />
+                <label htmlFor="light">Light</label>
+              </div>
+              <div className="flex gap-2 dark:text-gray-200">
+                <input
+                  id="dark"
+                  type="radio"
+                  name="theme"
+                  value="Dark"
+                  className="cursor-pointer"
+                  onChange={setMode}
+                  checked={currentMode === "Dark"}
+                />
+                <label htmlFor="dark">Dark</label>
+              </div>
+            </div>
+
+            <div className="mt-10 flex flex-col gap-4  items-center ">
+              <div className="  ">
+                <Link
+                  to="/Login"
+                  onClick={() => setIsOpen(false)}
+                  className="flex justify-center py-2 px-4 rounded-md border-1 text-black font-bold  w-64 dark:text-gray-200"
+                >
+                  Login
+                </Link>
+              </div>
+              <div className=" ">
+                <Link
+                  to="/Register"
+                  onClick={() => setIsOpen(false)}
+                  className="flex justify-center py-2 px-4 rounded-md bg-black text-white  w-64"
+                >
+                  Register
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </>
+      </>
+    </div>
   );
 };
 

@@ -1,66 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import {
+  AuthFormInput,
+  AuthHeader,
+  AuthLayout,
+  SubmitButton,
+} from "@/components/auth";
+import { Link } from "react-router-dom";
+
 const Login = () => {
-  const [posts, setPosts] = useState([]);
-  const [isloading, setIsloading] = useState(false);
-  const [error, setError] = useState("");
-
-  useEffect((timeout = 3000) => {
-    const DataFetch = async (link) => {
-      const controller = new AbortController();
-      const signal = controller.signal;
-
-      const timeOutId = setTimeout(() => controller.abort(), timeout);
-
-      try {
-        if (!navigator.onLine) {
-          throw new Error("No internet connection");
-        }
-        setIsloading(true);
-        setError("");
-
-        const data = await fetch(link, { signal });
-
-        if (!data.ok) throw new Error("sth went wrong");
-
-        const newData = await data.json();
-        setPosts(newData);
-      } catch (err) {
-        console.log(err.message);
-        if (err.message === "AbortError") {
-          setError("Request Aborted or time out ");
-        } else if (err.message === "Failed to fetch") {
-          setError("check your connection");
-        } else {
-          setError(err.message);
-        }
-      } finally {
-        setIsloading(false);
-        clearTimeout(timeOutId);
-      }
-
-      return () => {
-        controller.abort();
-      };
-    };
-
-    DataFetch("https://jsonplaceholder.typicode.com/posts");
-  }, []);
   return (
-    <div>
-      <h1>get your response </h1>
-      {isloading && <p>Loading...</p>}
-      {!isloading && error && <p>Error: {error}</p>}
-      {!isloading && !error && (
-        <ul>
-          {posts.map((item) => (
-            <li key={item.id}>
-              <p>{item.title}</p>
-              <p>{item.body}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="min-h-screen">
+      <AuthLayout>
+        <AuthHeader />
+        <AuthFormInput label="Username or email" />
+        <AuthFormInput label="Password" />
+        <div className=" flex mx-10 justify-end text-right">
+          <Link className=" text-sm ">Forgot password?</Link>
+        </div>
+        <SubmitButton text="Log in" />
+        <div className="flex flex-col">
+          <p className="flex justify-center gap-4 items-center p-6 text-sm text-gray-600">
+            <hr className="w-20" />
+            <span>or</span>
+            <hr className="w-20" />
+          </p>
+
+          <p className="flex  gap-3 items-center justify-center text-sm ">
+            <img className="w-6" src="https://logo.clearbit.com/google.com" />
+            <Link className="text-gray-600">Sign in with Google</Link>
+          </p>
+
+          <p className="flex justify-center gap-1 items-center m-6 text-sm ">
+            <span className="text-gray-600">Are you new?</span>
+            <Link className="text-green-500" to="/Register">
+              Create an Account
+            </Link>
+          </p>
+        </div>
+      </AuthLayout>
     </div>
   );
 };
+
 export default Login;

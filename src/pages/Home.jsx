@@ -1,5 +1,4 @@
 import React from "react";
-import back1 from "../assets/back_1.jpg";
 
 import { Button, SearchBar } from "@/components";
 
@@ -7,8 +6,8 @@ import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
 const jobData = [
   {
-    companyName: "Spotify",
-    companyLogo: "https://logo.clearbit.com/spotify.com",
+    companyName: "Google",
+    companyLogo: "https://logo.clearbit.com/google.com",
     postedAgo: "30 days ago",
     jobTitle: "Frontend Developer",
     jobType: ["Full time", "Remote"],
@@ -46,19 +45,19 @@ const jobData = [
 
 const Home = () => {
   return (
-    <div className="relative  min-h-screen   w-full">
-      <div
-        style={{
-          backgroundImage: `url(${back1})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-        className="absolute w-full h-full z-0"
-      >
+    <div className="relative bg-light-bg dark:bg-dark-bg min-h-screen bg-cover bg-center bg-no-repeat  w-full">
+      <div className="absolute w-full h-full z-0">
         <div className="relative z-20 container mx-auto px-4 pt-16 text-white font-poppins">
-          <p className="text-6xl text-primary1">Find your next opportunity</p>
-          <p className="text-xl  mt-2 text-primary2">
+          <p
+            className="text-6xl md:text-7xl dark:text-gray-100
+ text-primary1"
+          >
+            Find your next opportunity{" "}
+          </p>
+          <p
+            className="  text-lg leading-5 md:text-xl  mt-2 text-primary2  dark:text-gray-300
+"
+          >
             We connect you to top companies hiring now. Whether you're remote,
             hybrid, or on-site – we got you
           </p>
@@ -68,20 +67,20 @@ const Home = () => {
           <SearchBar />
         </div>
 
-        <div className=" mt-12 z-10 ">
-          <p className="flex justify-center  text-primary1">
+        <div className=" mt-10 z-10 ">
+          <p className="flex justify-center  dark:text-gray-300 text-primary1">
             Apply featured Jobs
           </p>
           <div className="flex mt-10 flex-wrap gap-4 justify-center ">
             {jobData.map((item, index) => (
               <div
-                className="bg-white  w-80 rounded-xl px-6 py-2 justify-center "
+                className="bg-white  dark:bg-[#1f1f1f] dark:text-white w-80 rounded-xl px-6 py-2 justify-center "
                 key={index}
               >
                 <div className="flex justify-between mb-4 mt-2">
                   <img className="w-8 h-8 " src={item.companyLogo} alt="Logo" />
 
-                  <p className="flex gap-1 items-center border-2 px-2 rounded-sm hover:bg-gray-100 cursor-pointer">
+                  <p className="flex gap-1 items-center border-2 px-2 rounded-sm hover:bg-gray-100  dark:hover:bg-gray-900 cursor-pointer">
                     <span>Save</span>
                     <BsBookmark size={12} />
                   </p>
@@ -100,10 +99,10 @@ const Home = () => {
                   </span>
                 </p>
                 <div className="flex gap-4 mb-12 ">
-                  <p className=" ml-2 bg-gray-200 py-1 px-2  rounded-sm leading-tight">
+                  <p className=" ml-2 bg-gray-200 py-1 px-2  rounded-sm leading-tight dark:bg-[#111111]">
                     {item.jobType[0]}
                   </p>
-                  <p className=" ml-2 bg-gray-200 py-1 px-2 rounded-sm leading-tight">
+                  <p className=" ml-2 bg-gray-200 py-1 px-2 rounded-sm leading-tight  dark:bg-[#111111]">
                     {item.jobType[1]}
                   </p>
                 </div>
