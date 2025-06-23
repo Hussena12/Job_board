@@ -27,6 +27,7 @@ const Login = () => {
 
           <p className="flex  gap-3 items-center justify-center text-sm ">
             <img className="w-6" src="https://logo.clearbit.com/google.com" />
+
             <Link className="text-gray-600">Sign in with Google</Link>
           </p>
 

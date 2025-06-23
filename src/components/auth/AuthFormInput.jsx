@@ -7,7 +7,7 @@ const AuthFormInput = ({ label }) => {
         <label htmlFor="input" className="text-gray-600">
           {label}
         </label>
-        <input className="bg-white shadow w-[22rem] px-2 py-3 border-t-1 border-color rounded-sm my-1 " />
+        <input className="bg-white shadow w-[20rem] px-2 py-3 border-t-1 border-color rounded-sm my-1 " />
       </div>
     </div>
   );
