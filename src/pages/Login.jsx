@@ -12,8 +12,8 @@ const Login = () => {
     <div className="min-h-screen">
       <AuthLayout>
         <AuthHeader />
-        <AuthFormInput label="Username or email" />
-        <AuthFormInput label="Password" />
+        <AuthFormInput placeholder="Email" label="Username or email" />
+        <AuthFormInput placeholder="Enter your password" label="Password" />
         <div className=" flex mx-10 justify-end text-right">
           <Link className=" text-sm ">Forgot password?</Link>
         </div>

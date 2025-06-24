@@ -11,7 +11,7 @@ import {
   Register,
 } from "./pages";
 
-import { Navbar, Pages } from "./layout";
+import { Navbar } from "./layout";
 import { useStateContext } from "./contexts/useStateContext";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           <div className="">
             <Routes>
               <Route path="/" element={<Home />}></Route>
-              <Route path="/Pages" element={<Pages />}></Route>
+
               <Route path="/Jobs" element={<Jobs />}></Route>
               <Route path="/PostJob" element={<PostJob />}></Route>
               <Route path="/Login" element={<Login />}></Route>

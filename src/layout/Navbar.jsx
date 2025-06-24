@@ -17,9 +17,7 @@ const Navbar = () => {
               <Link className="hover:text-gray-700" to="/">
                 Home
               </Link>
-              <Link className="hover:text-gray-700" to="/Pages">
-                Pages
-              </Link>
+
               <Link className="hover:text-gray-700" to="/Jobs">
                 Jobs
               </Link>
@@ -95,13 +93,7 @@ const Navbar = () => {
               >
                 Home
               </Link>
-              <Link
-                className="hover:text-gray-700"
-                to="/Pages"
-                onClick={() => setIsOpen(false)}
-              >
-                Pages
-              </Link>
+
               <Link
                 className="hover:text-gray-700 "
                 to="/Jobs"
