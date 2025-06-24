@@ -33,7 +33,7 @@ const Login = () => {
 
           <p className="flex justify-center gap-1 items-center m-6 text-sm ">
             <span className="text-gray-600">Are you new?</span>
-            <Link className="text-green-500" to="/Register">
+            <Link className="text-green-500 underline" to="/Register">
               Create an Account
             </Link>
           </p>

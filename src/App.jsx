@@ -19,7 +19,7 @@ function App() {
   return (
     <div className={currentMode === "Dark" ? "dark " : ""}>
       <BrowserRouter>
-        <div className="dark:bg-main-dark-bg">
+        <div className="bg-gray-100 dark:bg-[#030712]">
           <div className="static ">
             <Navbar />
           </div>

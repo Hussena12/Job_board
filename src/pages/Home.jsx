@@ -45,17 +45,17 @@ const jobData = [
 
 const Home = () => {
   return (
-    <div className="relative bg-log-bg dark:bg-dark-bg min-h-screen bg-cover bg-center bg-no-repeat  w-full">
+    <div className="relative bg-gray-100 dark:bg-[#030712] min-h-screen bg-cover bg-center bg-no-repeat  w-full">
       <div className="absolute w-full h-full z-0">
         <div className="relative z-20 container mx-auto px-4 pt-16 text-white font-poppins">
           <p
-            className="text-6xl md:text-7xl dark:text-gray-100
+            className="text-6xl md:text-7xl dark:text-gray-50
  text-primary1"
           >
             Find your next opportunity{" "}
           </p>
           <p
-            className="  text-lg leading-5 md:text-xl  mt-2 text-primary2  dark:text-gray-300
+            className="  text-lg leading-5 md:text-xl  mt-2 text-primary2  dark:text-gray-200
 "
           >
             We connect you to top companies hiring now. Whether you're remote,
@@ -74,7 +74,7 @@ const Home = () => {
           <div className="flex mt-10 flex-wrap gap-4 justify-center ">
             {jobData.map((item, index) => (
               <div
-                className="bg-white  dark:bg-[#1f1f1f] dark:text-white w-80 rounded-xl px-6 py-2 justify-center "
+                className="bg-white  dark:bg-slate-900 border dark:border-slate-700	 dark:text-gray-200 w-80 rounded-xl px-6 py-2 justify-center "
                 key={index}
               >
                 <div className="flex justify-between mb-4 mt-2">

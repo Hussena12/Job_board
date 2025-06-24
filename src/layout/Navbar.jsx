@@ -8,7 +8,7 @@ const Navbar = () => {
   const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
   return (
     <div>
-      <header className="bg-white shadow p-4 px-2 w-full  dark:bg-[#1f1f1f] dark:text-white ">
+      <header className="bg-white shadow p-4 px-2 w-full dark:bg-black dark:bg-opacity-40 dark:backdrop-blur-m dark:text-white ">
         <div className=" static navbar flex  gap-24 md:mx-12 mx-4 justify-between ">
           <div className="flex text-xl font-bold mr-8 items-center">GEtjob</div>
 

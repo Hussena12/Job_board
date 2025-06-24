@@ -22,7 +22,7 @@ const SearchBar = () => {
         <input
           type="search"
           value={searchTerm}
-          className="border-none py-2 px-3 rounded-sm  w-[24rem] md:w-[30rem] shadow text-gray-800  dark:bg-zinc-800 dark:border-gray-600 "
+          className="border-none py-2 px-3 rounded-sm  w-[24rem] md:w-[30rem] shadow text-gray-800  dark:bg-slate-900 dark:border-gray-600 "
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
@@ -33,7 +33,7 @@ const SearchBar = () => {
           borderRadius="4px"
           darkBgColor="black"
           onClick={handleSearch}
-          className=" bg-white dark:bg-[#111111] dark:text-white "
+          className=" bg-white dark:bg-slate-900 dark:text-white "
         />
       </div>
     </div>
