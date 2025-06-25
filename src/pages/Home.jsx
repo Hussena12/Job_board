@@ -100,13 +100,13 @@ text-gray-900"
                   </p>
                 </div>
                 <div className="mt-4  text-sm">
-                  <p>
+                  <p className="mb-2">
                     the job is for all peaople opened anyone can apply so it is
                     much burdened for real developers{" "}
                   </p>
-                  <Link className="underline">See Details...</Link>
+                  <Link className="underline ">See Details...</Link>
                 </div>
-                <hr className="border-t border-gray-300 my-2" />
+                <hr className="border-t border-gray-300 mb-2" />
 
                 <div className="flex  justify-between">
                   <div>

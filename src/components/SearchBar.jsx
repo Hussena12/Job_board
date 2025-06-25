@@ -6,6 +6,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [lastSearch, setLastSearch] = useState("");
 
+  console.log(lastSearch);
   const handleSearch = () => {
     if (searchTerm.trim() === "") return;
     setLastSearch(searchTerm);
@@ -22,7 +23,7 @@ const SearchBar = () => {
         <input
           type="search"
           value={searchTerm}
-          className="border-none py-2 px-3 rounded-sm  w-[24rem] md:w-[30rem] shadow text-gray-800  dark:bg-slate-900 dark:border-gray-600 "
+          className="border-none py-2 px-3 rounded-sm  w-[18rem] md:w-[30rem] shadow text-gray-800  dark:bg-slate-900 dark:border-gray-600 "
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>

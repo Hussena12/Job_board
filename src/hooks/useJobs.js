@@ -14,6 +14,7 @@ export const useJobs = (query, page = 1) => {
       .then((res) => {
         setJobs(res.data); // API gives jobs in `data` array
         setError(null);
+
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));

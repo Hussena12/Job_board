@@ -34,7 +34,7 @@ const Navbar = () => {
                 <Button
                   text="Register"
                   color="white"
-                  bgColor="black"
+                  bgColor="#1F2937"
                   borderRadius="100px"
                   size="4"
                   padding="6px 9px"
@@ -155,7 +155,7 @@ const Navbar = () => {
                 <Link
                   to="/Register"
                   onClick={() => setIsOpen(false)}
-                  className="flex justify-center py-2 px-4 rounded-md bg-black text-white  w-64"
+                  className="flex justify-center py-2 px-4 rounded-md bg-[#1F2937] text-white  w-64"
                 >
                   Register
                 </Link>

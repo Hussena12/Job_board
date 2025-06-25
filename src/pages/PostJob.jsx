@@ -1,7 +1,8 @@
 import React from "react";
+import { JobCard } from "@/components";
 
 const PostJob = () => {
-  return <div>PostJob</div>;
+  return <div></div>;
 };
 
 export default PostJob;

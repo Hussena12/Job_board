@@ -6,6 +6,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        italiana: ["Italiana", "serif"],
+      },
       backgroundImage: {
         "light-bg": "url('/light_bg.jpg')",
         "dark-bg": "url('/dark_bg.jpg')",
