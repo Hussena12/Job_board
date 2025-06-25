@@ -24,7 +24,7 @@ const JobCard = ({ job }) => {
 
   return (
     <div className="flex mt-10 flex-wrap gap-4 justify-center ">
-      <div className="  dark:bg-slate-900 border shadow-md dark:border-slate-700	 dark:text-gray-200 max-w-[23rem] rounded-xl px-6 py-2 justify-center ">
+      <div className="  dark:bg-slate-900 border shadow-md dark:border-slate-700	 dark:text-gray-200 max-w-[22rem] rounded-xl px-6 py-2 justify-center ">
         <div className="flex justify-between mb-2 mt-2=">
           <img
             className="w-8 h-8 "

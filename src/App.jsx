@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
   Dashboard,
   EditJob,
@@ -14,32 +14,36 @@ import {
 import { Navbar } from "./layout";
 import { useStateContext } from "./contexts/useStateContext";
 
-function App() {
-  const { currentMode } = useStateContext();
-  return (
-    <div className={currentMode === "Dark" ? "dark " : ""}>
-      <BrowserRouter>
-        <div className="bg-gray-100 dark:bg-[#030712]">
-          <div className="static ">
-            <Navbar />
-          </div>
-          <div className="">
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
+const AppWrapper = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
 
-              <Route path="/Jobs" element={<Jobs />}></Route>
-              <Route path="/PostJob" element={<PostJob />}></Route>
-              <Route path="/Login" element={<Login />}></Route>
-              <Route path="/Register" element={<Register />}></Route>
-              <Route path="/JobDetails" element={<JobDetails />}></Route>
-              <Route path="/EditJob" element={<EditJob />}></Route>
-              <Route path="/Dashboard" element={<Dashboard />}></Route>
-            </Routes>
-          </div>
-        </div>
-      </BrowserRouter>
+function App() {
+  const location = useLocation();
+  const hideNavbarOn = ["/Login", "/Register"];
+  const shouldHideNavbar = hideNavbarOn.includes(location.pathname);
+
+  const { currentMode } = useStateContext();
+
+  return (
+    <div className={currentMode === "Dark" ? "dark" : ""}>
+      <div className="bg-gray-100 dark:bg-[#030712] min-h-screen">
+        {!shouldHideNavbar && <Navbar />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Jobs" element={<Jobs />} />
+          <Route path="/PostJob" element={<PostJob />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/JobDetails" element={<JobDetails />} />
+          <Route path="/EditJob" element={<EditJob />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default AppWrapper;

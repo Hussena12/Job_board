@@ -42,13 +42,13 @@ const Home = () => {
       <div className="absolute w-full h-full z-0">
         <div className="relative z-20 container mx-auto px-4 pt-16 text-white font-poppins">
           <p
-            className="text-6xl md:text-7xl dark:text-gray-50
+            className="text-6xl md:text-[4.125rem]  dark:text-gray-50
 text-gray-900"
           >
             Find your next opportunity{" "}
           </p>
           <p
-            className="  text-lg leading-5 md:text-xl  mt-2 text-gray-700 dark:text-gray-200
+            className="  text-lg leading-5 md:text-lg  mt-2 text-gray-700 dark:text-gray-200
 "
           >
             We connect you to top companies hiring now. Whether you're remote,
