@@ -19,10 +19,10 @@ const Register = () => {
         <SubmitButton text="Create account" />
 
         <div className="flex flex-col">
-          <div className="flex justify-center gap-4 items-center p-6 text-sm text-gray-600">
-            <hr className="w-20" />
-            <span>Or register with</span>
-            <hr className="w-20" />
+          <div className="flex justify-center gap-4 items-center py-8 px-2 text-sm text-gray-600">
+            <hr className="w-16" />
+            <span className="text-xs">Or register with</span>
+            <hr className="w-16" />
           </div>
           <div className="flex gap-4 justify-center">
             <button className="flex gap-2 border-1 border-color px-9 py-2 rounded-sm">

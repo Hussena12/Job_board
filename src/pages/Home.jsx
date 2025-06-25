@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Button, SearchBar } from "@/components";
+import { Link } from "react-router-dom";
 
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
@@ -14,15 +15,7 @@ const jobData = [
     salary: "$120 - 160k",
     location: "New York, NY",
   },
-  {
-    companyName: "Netflix",
-    companyLogo: "https://logo.clearbit.com/netflix.com",
-    postedAgo: "15 days ago",
-    jobTitle: "UI/UX Designer",
-    jobType: ["Contract", "Remote"],
-    salary: "$90 - 130k",
-    location: "Los Angeles, CA",
-  },
+
   {
     companyName: "Amazon",
     companyLogo: "https://logo.clearbit.com/amazon.com",
@@ -50,12 +43,12 @@ const Home = () => {
         <div className="relative z-20 container mx-auto px-4 pt-16 text-white font-poppins">
           <p
             className="text-6xl md:text-7xl dark:text-gray-50
- text-primary1"
+text-gray-900"
           >
             Find your next opportunity{" "}
           </p>
           <p
-            className="  text-lg leading-5 md:text-xl  mt-2 text-primary2  dark:text-gray-200
+            className="  text-lg leading-5 md:text-xl  mt-2 text-gray-700 dark:text-gray-200
 "
           >
             We connect you to top companies hiring now. Whether you're remote,
@@ -74,43 +67,52 @@ const Home = () => {
           <div className="flex mt-10 flex-wrap gap-4 justify-center ">
             {jobData.map((item, index) => (
               <div
-                className="bg-white  dark:bg-slate-900 border dark:border-slate-700	 dark:text-gray-200 w-80 rounded-xl px-6 py-2 justify-center "
+                className="  dark:bg-slate-900 border shadow-md dark:border-slate-700	 dark:text-gray-200 max-w-[23rem] rounded-xl px-6 py-2 justify-center "
                 key={index}
               >
-                <div className="flex justify-between mb-4 mt-2">
+                <div className="flex justify-between mb-2 mt-2=">
                   <img className="w-8 h-8 " src={item.companyLogo} alt="Logo" />
 
-                  <p className="flex gap-1 items-center border-2 px-2 rounded-sm hover:bg-gray-100  dark:hover:bg-gray-900 cursor-pointer">
+                  <p className="flex gap-1 items-center border-2 text-sm px-2 rounded-sm hover:bg-gray-100  dark:hover:bg-gray-900 cursor-pointer">
                     <span>Save</span>
                     <BsBookmark size={12} />
                   </p>
                 </div>
                 <p className="flex flex-col  justify-center">
                   <span className="flex gap-2  ">
-                    <span className=" text-sm font-semibold">
+                    <span className=" text-sm text-gray-700 font-semibold">
                       {item.companyName}
                     </span>
                     <span className="text-xs font-semibold text-gray-600	">
                       {item.postedAgo}
                     </span>
                   </span>
-                  <span className="text-xl font-semibold py-2">
+                  <span className="text-lg font-semibold pt-1">
                     {item.jobTitle}
                   </span>
                 </p>
-                <div className="flex gap-4 mb-12 ">
-                  <p className=" ml-2 bg-gray-200 py-1 px-2  rounded-sm leading-tight dark:bg-[#111111]">
+                <div className="flex gap-4  ">
+                  <p className=" ml-2 bg-gray-200 text-gray-700  py-1 px-2 text-xs rounded-sm leading-tight dark:bg-[#111111]">
                     {item.jobType[0]}
                   </p>
-                  <p className=" ml-2 bg-gray-200 py-1 px-2 rounded-sm leading-tight  dark:bg-[#111111]">
+                  <p className=" ml-2 bg-gray-200 text-gray-700 py-1 px-2 text-xs rounded-sm leading-tight  dark:bg-[#111111]">
                     {item.jobType[1]}
                   </p>
+                </div>
+                <div className="mt-4  text-sm">
+                  <p>
+                    the job is for all peaople opened anyone can apply so it is
+                    much burdened for real developers{" "}
+                  </p>
+                  <Link className="underline">See Details...</Link>
                 </div>
                 <hr className="border-t border-gray-300 my-2" />
 
                 <div className="flex  justify-between">
                   <div>
-                    <p className="font-bold">{item.salary}</p>
+                    <p className="text-base font-medium text-green-600">
+                      {item.salary}
+                    </p>
                     <p className="text-xs text-gray-500">{item.location}</p>
                   </div>
                   <div>
@@ -119,7 +121,7 @@ const Home = () => {
                       color="white"
                       bgColor="black"
                       borderRadius="4px"
-                      size="4"
+                      size="2"
                     />
                   </div>
                 </div>

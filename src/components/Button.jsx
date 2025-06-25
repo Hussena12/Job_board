@@ -16,7 +16,7 @@ const Button = ({
       <button
         type="button"
         style={{ backgroundColor: bgColor, color, borderRadius, padding }}
-        className={` text-${size} p-2 hover:drop-shadow-sm ${className} `}
+        className={` text-${size} px-2 py-1 hover:drop-shadow-sm ${className} `}
         {...props}
       >
         {text}
