@@ -7,8 +7,8 @@ import { useStateContext } from "../contexts/useStateContext";
 const Navbar = () => {
   const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
   return (
-    <div>
-      <header className="bg-white shadow p-4 px-2 w-full dark:bg-black dark:bg-opacity-40 dark:backdrop-blur-m dark:text-white ">
+    <div className="flex justify-center">
+      <header className="bg-white shadow p-3  px-2 w-[86rem] dark:bg-slate-700 dark:bg-opacity-40 dark:backdrop-blur-m dark:text-white mt-4 rounded-[2rem] ">
         <div className=" static navbar flex  gap-24 md:mx-12 mx-4 justify-between ">
           <div className="flex text-xl font-bold mr-8 items-center">GEtjob</div>
 
@@ -22,7 +22,13 @@ const Navbar = () => {
                 Jobs
               </Link>
               <Link className="hover:text-gray-700" to="/PostJob">
-                Post
+                Post Job
+              </Link>
+              <Link className="hover:text-gray-700" to="/AboutUs">
+                About Us
+              </Link>
+              <Link className="hover:text-gray-700" to="/ContactUs">
+                Contact Us
               </Link>
             </div>
 
@@ -85,28 +91,41 @@ const Navbar = () => {
           } `}
         >
           <div className=" m-6">
-            <div className="flex flex-col justify-center items-center pt-24 pb-8 gap-6 dark:text-gray-200 ">
+            <div className="flex flex-col justify-center items-center pt-24 pb-8 gap-4 dark:text-gray-200 text-center">
               <Link
-                className="hover:text-gray-700"
+                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
                 to="/"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
-
               <Link
-                className="hover:text-gray-700 "
+                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
                 to="/Jobs"
                 onClick={() => setIsOpen(false)}
               >
                 Jobs
               </Link>
               <Link
-                className="hover:text-gray-700"
+                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
                 to="/PostJob"
                 onClick={() => setIsOpen(false)}
               >
                 Post
+              </Link>{" "}
+              <Link
+                onClick={() => setIsOpen(false)}
+                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                to="/AboutUs"
+              >
+                About Us
+              </Link>
+              <Link
+                onClick={() => setIsOpen(false)}
+                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                to="/ContactUs"
+              >
+                Contact Us
               </Link>
             </div>
 

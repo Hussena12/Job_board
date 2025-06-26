@@ -9,6 +9,8 @@ import {
   Login,
   PostJob,
   Register,
+  AboutUs,
+  ContactUs,
 } from "./pages";
 
 import { Navbar } from "./layout";
@@ -35,6 +37,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Jobs" element={<Jobs />} />
           <Route path="/PostJob" element={<PostJob />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/JobDetails" element={<JobDetails />} />

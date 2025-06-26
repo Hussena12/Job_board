@@ -67,7 +67,7 @@ text-gray-900"
           <div className="flex mt-10 flex-wrap gap-4 justify-center ">
             {jobData.map((item, index) => (
               <div
-                className="  dark:bg-slate-900 border shadow-md dark:border-slate-700	 dark:text-gray-200 max-w-[23rem] rounded-xl px-6 py-2 justify-center "
+                className="dark:bg-[#030d12] border shadow-md dark:border-slate-800	 dark:text-gray-200 max-w-[23rem] rounded-xl px-6 py-2 justify-center bg-gray-50"
                 key={index}
               >
                 <div className="flex justify-between mb-2 mt-2=">
@@ -80,10 +80,10 @@ text-gray-900"
                 </div>
                 <p className="flex flex-col  justify-center">
                   <span className="flex gap-2  ">
-                    <span className=" text-sm text-gray-700 font-semibold">
+                    <span className=" text-sm text-gray-700 dark:text-gray-200 font-semibold">
                       {item.companyName}
                     </span>
-                    <span className="text-xs font-semibold text-gray-600	">
+                    <span className="text-xs font-semibold text-gray-600 dark:text-gray-300	">
                       {item.postedAgo}
                     </span>
                   </span>
@@ -92,10 +92,10 @@ text-gray-900"
                   </span>
                 </p>
                 <div className="flex gap-4  ">
-                  <p className=" ml-2 bg-gray-200 text-gray-700  py-1 px-2 text-xs rounded-sm leading-tight dark:bg-[#111111]">
+                  <p className=" ml-2 bg-gray-200 text-gray-700 dark:text-gray-300 py-1 px-2 text-xs rounded-sm leading-tight dark:bg-[#111111] ">
                     {item.jobType[0]}
                   </p>
-                  <p className=" ml-2 bg-gray-200 text-gray-700 py-1 px-2 text-xs rounded-sm leading-tight  dark:bg-[#111111]">
+                  <p className=" ml-2 bg-gray-200 text-gray-700 dark:text-gray-300 py-1 px-2 text-xs rounded-sm leading-tight  dark:bg-[#111111]">
                     {item.jobType[1]}
                   </p>
                 </div>
@@ -106,14 +106,16 @@ text-gray-900"
                   </p>
                   <Link className="underline ">See Details...</Link>
                 </div>
-                <hr className="border-t border-gray-300 mb-2" />
+                <hr className="border-t border-gray-300 dark:border-gray-700 mb-2" />
 
                 <div className="flex  justify-between">
                   <div>
                     <p className="text-base font-medium text-green-600">
                       {item.salary}
                     </p>
-                    <p className="text-xs text-gray-500">{item.location}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-300">
+                      {item.location}
+                    </p>
                   </div>
                   <div>
                     <Button

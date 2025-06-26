@@ -6,3 +6,5 @@ export { default as Jobs } from "./Jobs";
 export { default as Login } from "./Login";
 export { default as PostJob } from "./PostJob";
 export { default as Register } from "./Register";
+export { default as AboutUs } from "./AboutUs";
+export { default as ContactUs } from "./ContactUs";
