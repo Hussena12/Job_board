@@ -7,9 +7,9 @@ import { useStateContext } from "../contexts/useStateContext";
 const Navbar = () => {
   const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
   return (
-    <div className="flex justify-center">
+    <div className="static flex justify-center">
       <header className="bg-white shadow p-3  px-2 w-[86rem] dark:bg-slate-700 dark:bg-opacity-40 dark:backdrop-blur-m dark:text-white mt-4 rounded-[2rem] ">
-        <div className=" static navbar flex  gap-24 md:mx-12 mx-4 justify-between ">
+        <div className="  navbar flex  gap-24 md:mx-6 mx-4 justify-between ">
           <div className="flex text-xl font-bold mr-8 items-center">GEtjob</div>
 
           <nav className="hidden md:flex w-full  items-center  pl-6 lg:pl-36 md:pl-18">

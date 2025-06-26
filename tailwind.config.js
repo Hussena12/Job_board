@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         italiana: ["Italiana", "serif"],
+        inter: ["Inter", "sans-serif"],
       },
       backgroundImage: {
         "light-bg": "url('/light_bg.jpg')",
