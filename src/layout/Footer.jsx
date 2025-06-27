@@ -14,7 +14,7 @@ const Footer = () => {
             <span></span>
           </div>
           <div>
-            <p>
+            <p className="text-[#887688]">
               Copyright © 2025 by GEtjob,
               <br /> Inc. All rights reserved
             </p>

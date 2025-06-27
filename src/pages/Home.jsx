@@ -38,7 +38,7 @@ const jobData = [
 
 const Home = () => {
   return (
-    <div className="relative bg-gray-100 dark:bg-[#030712] min-h-screen bg-cover bg-center bg-no-repeat  w-full">
+    <div className="relative bg-gray-100 dark:bg-[#030712] h-full bg-cover bg-center bg-no-repeat  w-full">
       <div className="absolute w-full h-full z-0">
         <div className="relative z-20 container mx-auto px-4 pt-16 text-white font-poppins">
           <p
