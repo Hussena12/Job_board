@@ -23,7 +23,8 @@ const Login = () => {
             <Link to="/">Back to Home</Link>
             <FaArrowRight size={12} />
           </div>
-          <div className="absolute flex flex-col justify-center bottom-16 left-60 rounded-xl bg-[rgba(159,137,113,0.5)] px-4 py-6">
+
+          <div className=" absolute flex flex-col justify-center bottom-16 left-30 rounded-xl bg-[rgba(159,137,113,0.5)] px-4 py-6 mx-4 lg:mx-10 xl:mx-18">
             <div className="flex gap-2 mb-2">
               <img
                 className="w-7 h-7 rounded-full object-cover transform "
@@ -32,15 +33,14 @@ const Login = () => {
               <p>Semir Hamid</p>
             </div>
             <p className="font-italiana leading-tight">
-              "I found my first remote developer role through this platform!
-              <br /> The listings are clear, up-to-date, and perfectly matched
-              <br />
-              to what I was looking for."
+              "I found my first remote developer role through this platform! The
+              listings are clear, up-to-date, and perfectly matched to what I
+              was looking for."
             </p>
           </div>
         </div>
       </div>
-      <div className=" relative min-h-screen w-full md:w-[40%]  ">
+      <div className="  relative min-h-screen w-full md:w-[40%]  ">
         <div className="md:hidden absolute top-10 left-4 font-medium py-1 bg-light-gray dark:bg-gray-700 px-2 rounded-2xl flex gap-2 items-center  text-[#1F2937] dark:text-gray-300">
           <FaArrowLeft size={12} />
           <Link to="/">Back </Link>
@@ -64,18 +64,24 @@ const Login = () => {
             </p>
 
             <p className="flex  gap-3 items-center justify-center text-sm  ">
-              <img className="w-6" src="https://logo.clearbit.com/google.com" />
+              <img
+                className=" md:w-5 ml:w-6 w-6"
+                src="https://logo.clearbit.com/google.com"
+              />
 
-              <Link className="text-gray-600 dark:text-gray-400 ">
+              <Link className="text-gray-600 dark:text-gray-400 md:text-xs ml:text-sm ">
                 Sign in with Google
               </Link>
             </p>
 
             <p className="flex justify-center gap-1 items-center m-6 text-sm ">
-              <span className="text-gray-600 dark:text-gray-300">
+              <span className="text-gray-600 dark:text-gray-300 md:text-xs ml:text-sm">
                 Don't Have an Account?
               </span>
-              <Link className="text-green-500 underline" to="/Register">
+              <Link
+                className="text-green-500 underline md:text-xs ml:text-sm"
+                to="/Register"
+              >
                 Sign Up
               </Link>
             </p>

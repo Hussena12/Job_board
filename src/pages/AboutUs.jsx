@@ -77,7 +77,7 @@ const AboutUs = () => {
       <div className="flex justify-center">
         <div className="flex rounded-2xl w-[88rem] my-24 mx-6 bg-[#ecebe6] dark:bg-[#002325] py-24 px-16">
           <div className="flex flex-wrap gap-16">
-            <div className="flex flex-col lg:w-[48%] justify-center ">
+            <div className="flex flex-col lg:w-[48%] md:w-[48%] justify-center ">
               <p className="text-3xl pb-10 font-semibold dark:text-gray-200">
                 Powered by <br /> industry-leading technology
               </p>
@@ -92,7 +92,7 @@ const AboutUs = () => {
               <Link> </Link>
             </div>
             <div className="flex-1  lg:w-[48%] ">
-              <img src="/technology.webp" />
+              <img src="/technology.webp" className="md:h-full " />
             </div>
           </div>
         </div>

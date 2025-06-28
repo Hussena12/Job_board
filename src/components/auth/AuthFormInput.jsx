@@ -5,6 +5,7 @@ const AuthFormInput = ({ label, placeholder }) => {
   const [showpassword, setShowpassword] = useState(false);
 
   const togglePassword = () => setShowpassword((prev) => !prev);
+
   return (
     <div className="  flex justify-center  py-2">
       <div className="flex flex-col relative  ">
@@ -18,7 +19,7 @@ const AuthFormInput = ({ label, placeholder }) => {
               : "text"
           }
           placeholder={placeholder}
-          className="bg-white dark:bg-[#1F2937] dark:text-gray-100 shadow w-[20rem] px-2 py-3 border-t-1 border-color rounded-sm my-1 "
+          className="bg-white dark:bg-[#1F2937] dark:text-gray-100 shadow lg:w-[22rem] md:w-[18rem] ml:w-[21rem] xl:w-[25rem] w-[22rem] sm:w-[25rem] px-2 py-3 border-t-1 border-color rounded-sm my-1 "
         />
 
         {label.toLowerCase() === "password" && (

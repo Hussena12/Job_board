@@ -67,7 +67,7 @@ text-gray-900"
           <div className="flex mt-10 flex-wrap gap-4 justify-center ">
             {jobData.map((item, index) => (
               <div
-                className="dark:bg-[#030d12] border shadow-md dark:border-slate-800	 dark:text-gray-200 max-w-[23rem] rounded-xl px-6 py-2 justify-center bg-gray-50"
+                className="dark:bg-[#002325] border shadow-md dark:border-slate-800	 dark:text-gray-200 max-w-[23rem] rounded-xl px-6 py-2 justify-center bg-gray-50"
                 key={index}
               >
                 <div className="flex justify-between mb-2 mt-2=">

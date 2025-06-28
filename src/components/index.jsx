@@ -9,3 +9,6 @@ export { default as JobList } from "./JobList";
 export { default as Select } from "./Select";
 export { default as SearchBar } from "./SearchBar";
 export { default as ApplyButton } from "./ApplyButton";
+export { default as ContactForm } from "./ContactForm";
+export { default as Contact2Form } from "./Contact2Form";
+export { default as SocialIcon } from "./SocialIcon";

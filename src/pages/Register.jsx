@@ -23,20 +23,18 @@ const Register = () => {
             <Link to="/">Back to Home</Link>
             <FaArrowRight size={12} />
           </div>
-          <div className="absolute flex flex-col justify-center bottom-16 left-60 rounded-xl bg-[rgba(159,137,113,0.5)] px-4 py-6">
+          <div className=" absolute flex flex-col justify-center bottom-16 left-30 rounded-xl bg-[rgba(159,137,113,0.5)] px-4 py-6 mx-4 lg:mx-10 xl:mx-18">
             <div className="flex gap-2 mb-2">
               <img
-                className="w-7 h-7 rounded-full object-cover transform  "
+                className="w-7 h-7 rounded-full object-cover transform "
                 src="/public/test.jpg"
               />
-
               <p>Semir Hamid</p>
             </div>
             <p className="font-italiana leading-tight">
-              "I found my first remote developer role through this platform!
-              <br /> The listings are clear, up-to-date, and perfectly matched
-              <br />
-              to what I was looking for."
+              "I found my first remote developer role through this platform! The
+              listings are clear, up-to-date, and perfectly matched to what I
+              was looking for."
             </p>
           </div>
         </div>
@@ -59,9 +57,7 @@ dark:text-gray-300"
           <div className="flex flex-col">
             <div className="flex justify-center gap-4 items-center py-8 px-2 text-sm text-gray-600">
               <hr className="w-16" />
-              <span className="text-xs dark:text-gray-300">
-                Or register with
-              </span>
+              <span className="text-xs dark:text-gray-300">Or</span>
               <hr className="w-16" />
             </div>
             <div className="flex gap-4 justify-center">
@@ -74,17 +70,20 @@ dark:text-gray-300"
               </button>
               <button className="flex gap-2 border-1 border-color px-9 py-2 rounded-sm">
                 <img
-                  className="w-6"
+                  className="w-6 "
                   src="https://logo.clearbit.com/apple.com"
                 />{" "}
                 <p className="dark:text-gray-300">Apple</p>
               </button>
             </div>
             <p className="flex justify-center gap-1 items-center m-4 text-sm ">
-              <span className="text-gray-600 dark:text-gray-300">
+              <span className="text-gray-600 dark:text-gray-300 md:text-xs ml:text-sm">
                 Already Have an Account?
               </span>
-              <Link className="text-green-500 underline" to="/Login">
+              <Link
+                className="text-green-500 underline md:text-xs ml:text-sm"
+                to="/Login"
+              >
                 Log in
               </Link>
             </p>

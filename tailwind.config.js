@@ -6,6 +6,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        ml: "856px",
+      },
       fontFamily: {
         italiana: ["Italiana", "serif"],
         inter: ["Inter", "sans-serif"],
