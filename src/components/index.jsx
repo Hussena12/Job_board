@@ -12,3 +12,8 @@ export { default as ApplyButton } from "./ApplyButton";
 export { default as ContactForm } from "./ContactForm";
 export { default as Contact2Form } from "./Contact2Form";
 export { default as SocialIcon } from "./SocialIcon";
+export { default as PostInput } from "./PostInput";
+export { default as TextEditor } from "./TextEditor";
+export { default as CheckBox } from "./CheckBox";
+export { default as PostSelect } from "./PostSelect";
+export { default as PostHeader } from "./PostHeader";
