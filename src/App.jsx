@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
-      <div className="bg-gray-100 dark:bg-[#121212] min-h-screen">
+      <div className="bg-[#fcfcfc] dark:bg-[#121212] min-h-screen">
         {!shouldHideNavbar && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />

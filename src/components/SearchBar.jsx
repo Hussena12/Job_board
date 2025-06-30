@@ -6,7 +6,6 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [lastSearch, setLastSearch] = useState("");
 
-  console.log(lastSearch);
   const handleSearch = () => {
     if (searchTerm.trim() === "") return;
     setLastSearch(searchTerm);
@@ -14,7 +13,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex gap-4 px-2 py-4 items-center">
+    <div className="flex gap-4 px-2 py-2 items-center">
       <div className="relative ">
         {searchTerm.length === 0 && (
           <FiSearch className="absolute top-3 left-3 text-gray-500 " />
@@ -23,7 +22,7 @@ const SearchBar = () => {
         <input
           type="search"
           value={searchTerm}
-          className="border-none py-2 px-3 rounded-sm  w-[18rem] md:w-[30rem] shadow text-gray-800  dark:bg-slate-900 dark:border-gray-600 "
+          className="border-none py-2 px-3 rounded-sm  w-[16rem] sm:w-[20rem] md:w-[30rem] shadow text-gray-800  dark:bg-[#171717] dark:border-gray-600 "
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
@@ -32,9 +31,8 @@ const SearchBar = () => {
           text="SEARCH"
           color="gray-200"
           borderRadius="4px"
-          darkBgColor="black"
           onClick={handleSearch}
-          className=" bg-white dark:bg-slate-900 dark:text-white "
+          className=" bg-white dark:bg-[#171717] dark:text-white text-sm py-2 shadow"
         />
       </div>
     </div>

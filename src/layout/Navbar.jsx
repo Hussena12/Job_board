@@ -8,20 +8,22 @@ const Navbar = () => {
   const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
   return (
     <div className="static flex justify-center">
-      <header className="bg-white shadow p-3  px-2 w-[86rem] dark:bg-[#002325]  dark:backdrop-blur-m dark:text-white mt-4 rounded-[2rem] ">
+      <header className="bg-white shadow p-3  px-2 w-[86rem] dark:bg-[#171717]  dark:backdrop-blur-m dark:text-white mt-4 rounded-[2rem] ">
         <div className="  navbar flex  gap-24 md:mx-6 mx-4 justify-between ">
-          <div className="flex text-xl font-bold mr-8 items-center">GEtjob</div>
+          <div className="flex text-xl font-bold ml:mr-8 items-center">
+            GEtjob
+          </div>
 
-          <nav className="hidden md:flex w-full  items-center  pl-6 lg:pl-36 md:pl-18">
-            <div className="flex  justify-center items-center space-x-8">
-              <Link className="hover:text-gray-700" to="/">
+          <nav className="hidden md:flex w-full  items-center   lg:pl-36 md:pl-18 md:text-sm ml:text-md">
+            <div className="flex  justify-center items-center space-x-6 ">
+              <Link className="hover:text-gray-700 " to="/">
                 Home
               </Link>
 
               <Link className="hover:text-gray-700" to="/Jobs">
                 Jobs
               </Link>
-              <Link className="hover:text-gray-700" to="/PostJob">
+              <Link className="hover:text-gray-700 " to="/PostJob">
                 Post Job
               </Link>
               <Link className="hover:text-gray-700" to="/AboutUs">
@@ -40,10 +42,10 @@ const Navbar = () => {
                 <Button
                   text="Register"
                   color="white"
-                  bgColor="#1F2937"
                   borderRadius="100px"
                   size="4"
                   padding="6px 9px"
+                  className="dark:bg-[#006239] bg-[#1F2937]"
                 />
               </Link>
             </div>
@@ -86,7 +88,7 @@ const Navbar = () => {
 
       <>
         <div
-          className={`fixed md:hidden min-h-screen w-2/3 shadow-xl bg-white dark:bg-[#181818] right-0 top-0 transform transition-transform duration-300 ease-in-out z-10  ${
+          className={`fixed md:hidden min-h-screen w-2/3 shadow-xl bg-white dark:bg-[#171717] right-0 top-0 transform transition-transform duration-300 ease-in-out z-10  ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } `}
         >

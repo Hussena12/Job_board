@@ -27,47 +27,47 @@ const AboutUs = () => {
   return (
     <div className="mt-28 ">
       <div className="flex flex-col items-center mx-9 mb-40 text-[#032b2f] dark:text-gray-200 ">
-        <p className="text-2xl mb-2">Our mission:</p>
-        <p className="lg:text-6xl md:text-5xl text-3xl mt-6 font-inter ">
+        <p className="text-xl sm:text-2xl mb-2">Our mission:</p>
+        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-3xl mt-6 font-inter ">
           WE ACTIVELY
         </p>
-        <p className="lg:text-6xl md:text-5xl text-3xl mt-6 font-inter  ">
+        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-3xl mt-6 font-inter  ">
           CONNECT PEOPLE TO THEIR{" "}
         </p>
-        <p className="lg:text-6xl md:text-5xl text-3xl mt-6 font-inter">
+        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-3xl mt-6 font-inter">
           NEXT GREAT OPPORTUNITY.
         </p>
       </div>
 
       <div className="w-full bg-[#002325] pb-24 ">
         <div className=" flex justify-center  pt-32 md:pt-36 ">
-          <p className="w-[36rem] text-lg md:text-xl text-white text-center px-6">
+          <p className="w-[36rem] text-sm sm:text-md md:text-lg text-white text-center px-6">
             What started as a way to help small businesses find great candidates
             has grown into a leading online employment marketplace that connects
             millions of job seekers with companies of all sizes.
           </p>
         </div>
-        <div className="flex flex-wrap gap-10 justify-center mt-12  ">
-          <div className="w-80 bg-gray-200 dark:bg-gray-300   rounded-2xl p-11 flex flex-col items-center  ">
+        <div className="flex flex-wrap gap-6 justify-center mt-12  ">
+          <div className="w-72 bg-gray-200 dark:bg-gray-300   rounded-2xl p-11 flex flex-col items-center  ">
             <p className="text-5xl pb-4">#1</p>
-            <p className="text-2xl">rated hiring site in Ethiopia</p>
+            <p className="text-xl">rated hiring site in Ethiopia</p>
           </div>
-          <div className="w-80 bg-gray-200 dark:bg-gray-300  rounded-2xl p-10 flex flex-col items-center">
+          <div className="w-72 bg-gray-200 dark:bg-gray-300  rounded-2xl p-10 flex flex-col items-center">
             <p className="text-5xl pb-4">20M+</p>
-            <p className="text-2xl">
+            <p className="text-xl">
               jobseekers have used GEtjob for their job search needs
             </p>
           </div>
-          <div className="w-80 bg-gray-200 dark:bg-gray-300  rounded-2xl p-10 flex flex-col items-center">
+          <div className="w-72 bg-gray-200 dark:bg-gray-300  rounded-2xl p-10 flex flex-col items-center">
             <p className="text-5xl pb-4">1M+</p>
-            <p className="text-2xl">
+            <p className="text-xl">
               businesses have come to GEtjob for their hiring needs
             </p>
           </div>
 
-          <div className="w-80 bg-gray-200 dark:bg-gray-300 rounded-2xl p-10 flex flex-col items-center">
+          <div className="w-72 bg-gray-200 dark:bg-gray-300 rounded-2xl p-10 flex flex-col items-center">
             <p className="text-5xl pb-4">60+</p>
-            <p className="text-2xl">
+            <p className="text-xl">
               countries citizen in the got eachother here
             </p>
           </div>
@@ -75,7 +75,7 @@ const AboutUs = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="flex rounded-2xl w-[88rem] my-24 mx-6 bg-[#ecebe6] dark:bg-[#002325] py-24 px-16">
+        <div className="flex rounded-2xl w-[88rem] my-24 mx-6 bg-gray-50 shadow dark:bg-[#002325] py-24 px-16">
           <div className="flex flex-wrap gap-16">
             <div className="flex flex-col lg:w-[48%] md:w-[48%] justify-center ">
               <p className="text-3xl pb-10 font-semibold dark:text-gray-200">

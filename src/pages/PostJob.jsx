@@ -16,17 +16,22 @@ import { Link } from "react-router-dom";
 import { FiEye, FiSave, FiPlus } from "react-icons/fi";
 import Select from "react-select";
 
-const options = [
-  { value: "all", label: "All" },
-  { value: "type", label: "type" },
-  { value: "one", label: "one" },
-  { value: "two", label: "two" },
+const options1 = [
+  { value: "Full-time", label: "Full-time" },
+  { value: "Part-time", label: "Part-time" },
+  { value: "Weekend", label: "Weekend" },
+];
+
+const options2 = [
+  { value: "On-site", label: "On-site" },
+  { value: "Remote", label: "Remote" },
+  { value: "Hybrid", label: "Hybrid" },
 ];
 
 const PostJob = () => {
   return (
     <div>
-      <div className="flex px-5 md:pr-9 justify-between bg-gray-50 py-2 border-b-1">
+      <div className="flex px-5 md:pr-9 justify-between py-2 border-b-1">
         <div className="flex items-center">
           <Link to="/">
             <svg
@@ -34,7 +39,7 @@ const PostJob = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="w-6 h-5"
+              className="w-6 h-5 dark:text-gray-200"
             >
               <path
                 strokeLinecap="round"
@@ -49,9 +54,9 @@ const PostJob = () => {
         <div className="flex gap-3">
           <p className="flex gap-1 items-center text-sm">
             <span>
-              <FiSave />
+              <FiSave className="dark:text-gray-200" />
             </span>
-            <span>Save Draft</span>
+            <span className="dark:text-gray-200">Save Draft</span>
           </p>
           <Button
             className="text-sm"
@@ -74,10 +79,12 @@ const PostJob = () => {
         </div>
       </div>
 
-      <div className="py-6 mx-3 px-4 bg-gray-50 ">
-        <div className=" border-b-1 pb-6 border-color">
-          <p className="text-2xl font-semibold">Create Jobs</p>
-          <p className="text-sm">
+      <div className="py-6 mx-3 px-4 ">
+        <div className=" border-b-1 pb-6 border-color dark:border-gray-800 ">
+          <p className="text-2xl font-semibold dark:text-gray-100">
+            Create Jobs
+          </p>
+          <p className="text-sm dark:text-gray-200">
             Define details, budget and outline preferences
           </p>
         </div>
@@ -87,61 +94,66 @@ const PostJob = () => {
           subtitle="Please use a description title"
         >
           <div className="mt-8">
-            <PostInput label="Job title" placeholder="Backend engineer" />
-            <PostInput label="Application link (optional) " />
-            <PostInput label="Address" placeholder=" 123 Addis " />
+            <PostInput
+              label="Job title"
+              placeholder="Backend engineer"
+              className=" lg:w-[22rem]   xl:w-[25rem] w-[16rem] sm:w-[25rem] "
+            />
+            <PostInput
+              label="Application link (optional)"
+              className=" lg:w-[22rem]   xl:w-[25rem] w-[16rem] sm:w-[25rem] "
+            />
+            <PostInput
+              label="Address"
+              placeholder=" 123 Addis"
+              className=" lg:w-[22rem]   xl:w-[25rem] w-[16rem] sm:w-[25rem] "
+            />
 
-            <div className="flex gap-2">
-              <div>
-                <label className="text-gray-600 dark:text-gray-300 text-sm">
-                  City
-                </label>
-                <Select
-                  options={options}
-                  className="w-28"
-                  menuPosition="fixed"
-                />
-              </div>
-              <div>
-                <label className="text-gray-600 dark:text-gray-300 text-sm">
-                  State
-                </label>
-                <Select
-                  options={options}
-                  className="w-28"
-                  menuPosition="fixed"
-                />
-              </div>
+            <div className="flex gap-2 ">
+              <PostSelect className="w-28 " label="State" />
+              <PostSelect className="w-28" label="City" />
 
-              <div className="flex flex-col">
-                <label className="text-gray-600 dark:text-gray-300 text-sm ">
-                  Zip Code
-                </label>
-                <input
-                  className="bg-white dark:bg-[#1F2937] dark:text-gray-100  w-[6.5rem] px-2 h-[2.375rem]  border-color rounded-sm my-1 dark:border-[#b0b0b010] dark:placeholder-gray-400 border-1  text-xs $"
-                  placeholder="1234"
-                />
-              </div>
+              <PostInput
+                label="Zip Code"
+                placeholder=" 1234"
+                className="  w-[6.5rem] h-[2.375rem]"
+              />
             </div>
           </div>
         </PostHeader>
 
-        <PostHeader>
-          <PostSelect label1="Employment type" label2="Shift type" />
-        </PostHeader>
+        <PostHeader
+          title="2. Description"
+          subtitle="Provide a short description about the job"
+        ></PostHeader>
 
         <PostHeader
           title="3. Employment type"
           subtitle="Description text goes in here"
         >
-          <div className="mt-4">
-            <CheckBox id="full" text="Full-time" />
-            <CheckBox id="part" text="Part-time" />
-            <CheckBox id="weekend" text="Week-end" />
+          <div className="flex gap-4 mt-5 ">
+            <PostSelect label="Employment type" />
+            <PostSelect label="Shift type" />
           </div>
         </PostHeader>
 
-        <PostHeader></PostHeader>
+        <PostHeader title="4. Salary" subtitle="Get your pay off amount">
+          <div className="mt-6">
+            <div className="flex gap-4">
+              <PostInput
+                label="min-salary"
+                placeholder="$20k"
+                className="  w-[6.5rem] h-[2.375rem]"
+              />
+              <PostInput
+                label="max-salary"
+                placeholder="$100k"
+                className="  w-[6.5rem] h-[2.375rem] text-md"
+              />
+            </div>
+            <CheckBox id="Negotiable" text="Negotiable" />
+          </div>
+        </PostHeader>
       </div>
     </div>
   );
