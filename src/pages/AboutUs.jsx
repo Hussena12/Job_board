@@ -28,19 +28,19 @@ const AboutUs = () => {
     <div className="mt-28 ">
       <div className="flex flex-col items-center mx-9 mb-40 text-[#032b2f] dark:text-gray-200 ">
         <p className="text-xl sm:text-2xl mb-2">Our mission:</p>
-        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-3xl mt-6 font-inter ">
+        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-4xl mt-6 font-inter ">
           WE ACTIVELY
         </p>
-        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-3xl mt-6 font-inter  ">
+        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-4xl mt-6 font-inter  ">
           CONNECT PEOPLE TO THEIR{" "}
         </p>
-        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-3xl mt-6 font-inter">
+        <p className="lg:text-6xl md:text-5xl text-2xl sm:text-4xl mt-6 font-inter">
           NEXT GREAT OPPORTUNITY.
         </p>
       </div>
 
-      <div className="w-full bg-[#002325] pb-24 ">
-        <div className=" flex justify-center  pt-32 md:pt-36 ">
+      <div className="w-full bg-[#002325] pb-20 ">
+        <div className=" flex justify-center  pt-20  ">
           <p className="w-[36rem] text-sm sm:text-md md:text-lg text-white text-center px-6">
             What started as a way to help small businesses find great candidates
             has grown into a leading online employment marketplace that connects
@@ -75,13 +75,13 @@ const AboutUs = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="flex rounded-2xl w-[88rem] my-24 mx-6 bg-gray-50 shadow dark:bg-[#002325] py-24 px-16">
-          <div className="flex flex-wrap gap-16">
+        <div className="flex rounded-2xl w-[40rem] md:w-[46rem] ml:w-[51rem] lg:w-[61rem] xl:w-[68rem]  my-12 mx-4 bg-gray-50 shadow border dark:bg-[#002325] py-12 px-12">
+          <div className="flex flex-wrap gap-12 md:gap-12 ">
             <div className="flex flex-col lg:w-[48%] md:w-[48%] justify-center ">
-              <p className="text-3xl pb-10 font-semibold dark:text-gray-200">
+              <p className="text-2xl pb-4 font-semibold dark:text-gray-200">
                 Powered by <br /> industry-leading technology
               </p>
-              <p className=" text-lg md:text-xl text-wrap dark:text-gray-200">
+              <p className=" text-md  text-wrap dark:text-gray-200">
                 Our sophisticated AI-matching technology is at the core of
                 everything we do—and by analyzing billions of user interactions,
                 it’s always getting smarter. It improves the job search

@@ -10,7 +10,9 @@ const JobList = () => {
   return (
     <div className="min-h-screen pb-4 px-4">
       {loading && (
-        <p className="text-center text-xl font-medium">Loading jobs...</p>
+        <p className="text-center text-xl font-medium dark:text-gray-50">
+          Loading jobs...
+        </p>
       )}
       {error && <p className="text-red-500">{error}</p>}
 

@@ -13,10 +13,7 @@ const Login = () => {
     <div className="min-h-screen md:flex">
       <div className="hidden md:flex w-[60%]  m-4  ">
         <div className="relative  ">
-          <img
-            className="object-cover min-h-screen "
-            src="/public/login2.jpg"
-          />
+          <img className="object-cover min-h-screen " src="/login2.jpg" />
           <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(0,0,0,0.4),_rgba(0,0,0,0.2))]" />
 
           <div className="absolute top-6 right-6 text-white bg-[rgba(159,137,113,0.5)] py-1 px-2 rounded-2xl flex gap-2 items-center">

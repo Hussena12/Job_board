@@ -80,7 +80,7 @@ const PostJob = () => {
       </div>
 
       <div className="py-6 mx-3 px-4 ">
-        <div className=" border-b-1 pb-6 border-color dark:border-gray-800 ">
+        <div className=" border-b-1 pb-6 ">
           <p className="text-2xl font-semibold dark:text-gray-100">
             Create Jobs
           </p>
@@ -89,71 +89,87 @@ const PostJob = () => {
           </p>
         </div>
 
-        <PostHeader
-          title="1. Job Details"
-          subtitle="Please use a description title"
-        >
-          <div className="mt-8">
+        <div className="md:flex border-b-1">
+          <PostHeader
+            title="1. Job Details"
+            subtitle="Please use a description title"
+          ></PostHeader>
+
+          <div className="mt-8  ">
             <PostInput
               label="Job title"
               placeholder="Backend engineer"
-              className=" lg:w-[22rem]   xl:w-[25rem] w-[16rem] sm:w-[25rem] "
+              className="lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
             <PostInput
               label="Application link (optional)"
-              className=" lg:w-[22rem]   xl:w-[25rem] w-[16rem] sm:w-[25rem] "
+              className="lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
             <PostInput
               label="Address"
               placeholder=" 123 Addis"
-              className=" lg:w-[22rem]   xl:w-[25rem] w-[16rem] sm:w-[25rem] "
+              className=" lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
 
             <div className="flex gap-2 ">
-              <PostSelect className="w-28 " label="State" />
-              <PostSelect className="w-28" label="City" />
+              <PostSelect className="w-28 sm:w-32 lg:w-[9rem]" label="State" />
+              <PostSelect className="w-28 sm:w-32 lg:w-[9rem]" label="City" />
 
               <PostInput
                 label="Zip Code"
                 placeholder=" 1234"
-                className="  w-[6.5rem] h-[2.375rem]"
+                className="  w-[6.5rem] sm:w-32 lg:w-[9rem] h-[2.375rem]"
               />
             </div>
           </div>
-        </PostHeader>
+        </div>
 
-        <PostHeader
-          title="2. Description"
-          subtitle="Provide a short description about the job"
-        ></PostHeader>
+        <div className="md:flex border-b-1">
+          <PostHeader
+            title="2. Description"
+            subtitle="Provide a short description about the job"
+          ></PostHeader>
 
-        <PostHeader
-          title="3. Employment type"
-          subtitle="Description text goes in here"
-        >
-          <div className="flex gap-4 mt-5 ">
-            <PostSelect label="Employment type" />
-            <PostSelect label="Shift type" />
+          <div className="flex gap-4 mt-5   pb-5"></div>
+        </div>
+
+        <div className="md:flex border-b-1">
+          <PostHeader
+            title="3. Employment type"
+            subtitle="Description text goes in here"
+          ></PostHeader>
+          <div className="flex gap-4 mt-5   pb-5">
+            <PostSelect
+              className="w-32 sm:w-36 lg:w-[10rem]"
+              label="Employment type"
+            />
+            <PostSelect
+              className="w-32 sm:w-36 lg:w-[10rem]"
+              label="Shift type"
+            />
           </div>
-        </PostHeader>
+        </div>
 
-        <PostHeader title="4. Salary" subtitle="Get your pay off amount">
-          <div className="mt-6">
+        <div className="md:flex  border-b-1">
+          <PostHeader title="4. Salary" subtitle="Get your pay off amount">
+            {" "}
+          </PostHeader>
+          <div className="mt-6 pb-5">
             <div className="flex gap-4">
               <PostInput
                 label="min-salary"
                 placeholder="$20k"
-                className="  w-[6.5rem] h-[2.375rem]"
+                className="w-32 sm:w-36 lg:w-[10rem] h-[2.375rem]"
               />
               <PostInput
                 label="max-salary"
                 placeholder="$100k"
-                className="  w-[6.5rem] h-[2.375rem] text-md"
+                className=" w-32 sm:w-36 lg:w-[10rem] h-[2.375rem] text-md"
               />
             </div>
             <CheckBox id="Negotiable" text="Negotiable" />
           </div>
-        </PostHeader>
+        </div>
       </div>
     </div>
   );

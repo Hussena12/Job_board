@@ -27,7 +27,9 @@ const ContactUs = () => {
               <span>775 Rolling Green Rd.</span>
             </p>
           </div>
-          <SocialIcon />
+          <div className=" flex mb-4 mt-12 justify-center">
+            <SocialIcon />
+          </div>
         </div>
       </div>
 

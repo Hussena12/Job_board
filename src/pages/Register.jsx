@@ -49,28 +49,28 @@ dark:text-gray-300"
         </div>
         <AuthLayout>
           <AuthHeader text="Get Started" />
-          <AuthForm2Input />
+          <AuthForm2Input label1="First name" label2="Last name" />
           <AuthFormInput placeholder="your.name@example.com" label="Email" />
           <AuthFormInput placeholder="Enter your password" label="Password" />
           <SubmitButton text="Create account" />
 
           <div className="flex flex-col">
-            <div className="flex justify-center gap-4 items-center py-8 px-2 text-sm text-gray-600">
+            <div className="flex justify-center gap-4 items-center py-4 px-2 text-sm text-gray-600">
               <hr className="w-16" />
               <span className="text-xs dark:text-gray-300">Or</span>
               <hr className="w-16" />
             </div>
             <div className="flex gap-4 justify-center">
-              <button className="flex gap-2 border-1 border-color px-9 py-2 rounded-sm">
+              <button className="flex items-center gap-2 border-1 border-color px-6 py-1 rounded-sm">
                 <img
-                  className="w-6 "
+                  className="w-5 h-5 "
                   src="https://logo.clearbit.com/google.com"
                 />{" "}
                 <p className="dark:text-gray-300">Google</p>
               </button>
-              <button className="flex gap-2 border-1 border-color px-9 py-2 rounded-sm">
+              <button className="flex items-center gap-2 border-1 border-color px-6 py-1 rounded-sm">
                 <img
-                  className="w-6 "
+                  className="w-5 h-5 "
                   src="https://logo.clearbit.com/apple.com"
                 />{" "}
                 <p className="dark:text-gray-300">Apple</p>

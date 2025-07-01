@@ -4,6 +4,7 @@ import { Button, SearchBar } from "@/components";
 import { Link } from "react-router-dom";
 
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
+import { Footer } from "@/layout";
 
 const jobData = [
   {
@@ -99,7 +100,7 @@ text-gray-900 mx-4 ml:mx-20 sm:mx-8 md:mx-12"
                     {item.jobType[1]}
                   </p>
                 </div>
-                <div className="mt-4  text-sm">
+                <div className="mt-4  text-xs">
                   <p className="mb-2">
                     the job is for all people opened anyone can apply so it is
                     much open for developers{" "}
@@ -132,6 +133,7 @@ text-gray-900 mx-4 ml:mx-20 sm:mx-8 md:mx-12"
           </div>
           ;
         </div>
+        <Footer />
       </div>
     </div>
   );

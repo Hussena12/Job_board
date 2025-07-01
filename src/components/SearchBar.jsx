@@ -22,7 +22,7 @@ const SearchBar = () => {
         <input
           type="search"
           value={searchTerm}
-          className="border-none py-2 px-3 rounded-sm  w-[16rem] sm:w-[20rem] md:w-[30rem] shadow text-gray-800  dark:bg-[#171717] dark:border-gray-600 "
+          className="border-none py-2 px-3 rounded-sm  w-[16rem] sm:w-[20rem] md:w-[30rem] shadow text-gray-800  dark:bg-[#171717] dark:border-gray-600 dark:text-gray-300"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
