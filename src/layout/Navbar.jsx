@@ -8,7 +8,7 @@ const Navbar = () => {
   const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
   return (
     <div className="static flex justify-center">
-      <header className="bg-white shadow p-3  px-2 w-[86rem] dark:bg-[#171717]  dark:backdrop-blur-m dark:text-white mt-4 rounded-[2rem] ">
+      <header className="bg-white shadow p-3  px-2 w-[86rem] dark:bg-[#000]  dark:backdrop-blur-m dark:text-white mt-4 rounded-[2rem] ">
         <div className="  navbar flex  gap-24 md:mx-6 mx-4 justify-between ">
           <div className="flex text-xl font-bold ml:mr-8 items-center">
             GEtjob
@@ -16,20 +16,20 @@ const Navbar = () => {
 
           <nav className="hidden md:flex w-full  items-center   lg:pl-36 md:pl-18 md:text-sm ml:text-md">
             <div className="flex  justify-center items-center space-x-6 ">
-              <Link className="hover:text-gray-700 " to="/">
+              <Link className="hover:text-[#3ecf8e] " to="/">
                 Home
               </Link>
 
-              <Link className="hover:text-gray-700" to="/Jobs">
+              <Link className="hover:text-[#3ecf8e]" to="/Jobs">
                 Jobs
               </Link>
-              <Link className="hover:text-gray-700 " to="/PostJob">
+              <Link className="hover:text-[#3ecf8e] " to="/PostJob">
                 Post Job
               </Link>
-              <Link className="hover:text-gray-700" to="/AboutUs">
+              <Link className="hover:text-[#3ecf8e]" to="/AboutUs">
                 About Us
               </Link>
-              <Link className="hover:text-gray-700" to="/ContactUs">
+              <Link className="hover:text-[#3ecf8e]" to="/ContactUs">
                 Contact Us
               </Link>
             </div>
@@ -45,7 +45,7 @@ const Navbar = () => {
                   borderRadius="100px"
                   size="4"
                   padding="6px 9px"
-                  className="dark:bg-[#006239] bg-[#1F2937]"
+                  className="dark:bg-[#3ecf8e] bg-[#1F2937]"
                 />
               </Link>
             </div>
@@ -93,23 +93,23 @@ const Navbar = () => {
           } `}
         >
           <div className=" m-6">
-            <div className="flex flex-col justify-center items-center pt-24 pb-8 gap-4 dark:text-gray-200 text-center">
+            <div className="flex flex-col justify-center items-center pt-20 pb-6 gap-1 dark:text-gray-200 text-center">
               <Link
-                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
                 to="/"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
-                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
                 to="/Jobs"
                 onClick={() => setIsOpen(false)}
               >
                 Jobs
               </Link>
               <Link
-                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
                 to="/PostJob"
                 onClick={() => setIsOpen(false)}
               >
@@ -117,14 +117,14 @@ const Navbar = () => {
               </Link>{" "}
               <Link
                 onClick={() => setIsOpen(false)}
-                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
                 to="/AboutUs"
               >
                 About Us
               </Link>
               <Link
                 onClick={() => setIsOpen(false)}
-                className="w-full hover:text-gray-700 py-1 hover:bg-gray-100 "
+                className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
                 to="/ContactUs"
               >
                 Contact Us
