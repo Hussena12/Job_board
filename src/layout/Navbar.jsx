@@ -16,7 +16,7 @@ const Navbar = () => {
 
           <nav className="hidden md:flex w-full  items-center   lg:pl-36 md:pl-18 md:text-sm ml:text-md">
             <div className="flex  justify-center items-center space-x-6 ">
-              <Link className="hover:text-[#3ecf8e] " to="/">
+              <Link className="hover:text-[#3ecf8e] " to="/Home">
                 Home
               </Link>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
                   borderRadius="100px"
                   size="4"
                   padding="6px 9px"
-                  className="dark:bg-[#3ecf8e] bg-[#1F2937]"
+                  className="dark:bg-[#3ecf8ece] bg-[#1F2937]"
                 />
               </Link>
             </div>

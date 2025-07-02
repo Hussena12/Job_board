@@ -34,7 +34,7 @@ function App() {
       <div className="bg-[#fcfcfc] dark:bg-[#121212] min-h-screen">
         {!shouldHideNavbar && <Navbar />}
         <Routes>
-          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Jobs" element={<Jobs />} />
           <Route path="/PostJob" element={<PostJob />} />
           <Route path="/AboutUs" element={<AboutUs />} />

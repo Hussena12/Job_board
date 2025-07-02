@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AuthFormInput,
   AuthHeader,
@@ -9,8 +9,17 @@ import {
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { SignAddition, SignImage } from "@/components";
+import { userAuth } from "@/contexts/AuthContext";
 
 const Register = () => {
+  const [loading, setLoading] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { session } = userAuth();
+  console.log(session);
+
   return (
     <div className="min-h-screen md:flex">
       <SignImage />

@@ -40,16 +40,16 @@ const jobData = [
 const Home = () => {
   return (
     <div className="relative w-full">
-      <div className="absolute w-full h-full z-0">
+      <div className="relative w-full h-full z-0">
         <div className="relative z-20 container mx-auto px-4 pt-14 text-white font-poppins">
           <p
             className="text-5xl sm:text-6xl md:text-[4.125rem]  dark:text-[#3ecf8e]
-text-gray-900 mx-4 ml:mx-20 sm:mx-8 md:mx-12"
+text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
           >
             Find your next opportunity{" "}
           </p>
           <p
-            className="  text-sm leading-5 md:text-lg  mt-2 text-gray-700 dark:text-gray-50 mx-4 sm:mx-8 md:mx-12 ml:mx-20
+            className="  text-sm leading-5 md:text-lg  mt-2 text-gray-700 dark:text-gray-50 mx-4 sm:mx-6 md:mx-8 ml:mx-10
 "
           >
             We connect you to top companies hiring now. Whether you're remote,

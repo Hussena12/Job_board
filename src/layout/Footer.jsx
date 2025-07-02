@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="lg:flex md:gap-6 mx-6 md:mx-24 border-t-1 border-color dark:border-gray-800">
+    <div className="lg:flex md:gap-6 mx-8 md:mx-12 ml:mx-16 border-t-1 border-color dark:border-gray-800">
       <div className="flex  flex-col gap-4 my-6 lg:py-6 lg:pr-12">
         <p className="mb-2 dark:text-white">GEtjob</p>
         <SocialIcon />
