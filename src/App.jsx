@@ -39,12 +39,12 @@ function App() {
           <Route path="/PostJob" element={<PostJob />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
 
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/JobDetails" element={<JobDetails />} />
           <Route path="/EditJob" element={<EditJob />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </div>

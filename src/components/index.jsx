@@ -19,3 +19,4 @@ export { default as PostSelect } from "./PostSelect";
 export { default as PostHeader } from "./PostHeader";
 export { default as SignAddition } from "./SignAddition";
 export { default as SignImage } from "./SignImage";
+export { default as PrivateRoute } from "./PrivateRoute";

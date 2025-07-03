@@ -5,15 +5,43 @@ import {
   AuthLayout,
   SubmitButton,
 } from "@/components/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { SignImage } from "@/components";
+import { userAuth } from "@/contexts/AuthContextProvider";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { session, signInUser } = userAuth();
+  console.log(session);
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const result = await signInUser(email, password);
+      if (result.success) {
+        navigate("/Dashboard");
+      }
+    } catch (err) {
+      setError("an error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="min-h-screen md:flex">
       <SignImage />
-      <div className="  relative min-h-screen w-full md:w-[40%]  ">
+      <form
+        onSubmit={handleSignIn}
+        className="  relative min-h-screen w-full md:w-[40%]  "
+      >
         <div className="md:hidden absolute top-10 left-4 font-medium py-1 bg-light-gray dark:bg-gray-700 px-2 rounded-2xl flex gap-2 items-center  text-[#1F2937] dark:text-gray-300">
           <FaArrowLeft size={12} />
           <Link to="/">Back </Link>
@@ -21,14 +49,20 @@ const Login = () => {
         <AuthLayout>
           <AuthHeader text="Welcome back" />
           <AuthFormInput
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="your.name@example.com "
             label="Email or Username "
           />
-          <AuthFormInput placeholder="Enter your password" label="Password" />
+          <AuthFormInput
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            label="Password"
+          />
           {/* <div className=" flex mx-10 justify-end text-right">
           <Link className=" text-sm ">Forgot password?</Link>
         </div> */}
           <SubmitButton text="Log in" />
+          {error && <p className="text-red-600 py-4 text-center">{error}</p>}
           <div className="flex flex-col">
             <p className="flex justify-center gap-4 items-center p-6 text-sm text-gray-600">
               <hr className="w-20" />
@@ -60,7 +94,7 @@ const Login = () => {
             </p>
           </div>
         </AuthLayout>
-      </div>
+      </form>
     </div>
   );
 };

@@ -1,8 +1,4 @@
 import React from "react";
-// import { registerLicense } from "@syncfusion/ej2-base";
-// registerLicense(
-//   "MzkyNzAzOUAzMTM5MmUzNDJlMzBqdkpjdzlQa0NFZkR1TlRad0N2RURrZHJDaGI2SE9NbVRhL2FuL2RaVmtrPQ=="
-// );
 
 import {
   Button,

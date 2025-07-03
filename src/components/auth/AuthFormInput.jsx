@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-const AuthFormInput = ({ label, placeholder }) => {
+const AuthFormInput = ({ label, placeholder, onChange }) => {
   const [showpassword, setShowpassword] = useState(false);
 
   const togglePassword = () => setShowpassword((prev) => !prev);
@@ -9,17 +9,18 @@ const AuthFormInput = ({ label, placeholder }) => {
   return (
     <div className="  flex justify-center  py-2">
       <div className="flex flex-col relative  ">
-        <label htmlFor="input" className="text-gray-600 dark:text-gray-300">
+        <label htmlFor="input" className="text-gray-600 dark:text-gray-300 ">
           {label}
         </label>
         <input
+          onChange={onChange}
           type={
             label.toLowerCase() === "password" && !showpassword
               ? "password"
               : "text"
           }
           placeholder={placeholder}
-          className="bg-white dark:bg-[#1F2937] dark:text-gray-100 shadow lg:w-[22rem] md:w-[17rem] ml:w-[20rem] xl:w-[24rem] w-[21rem] sm:w-[23rem] px-2 py-2 border-t-1 border-color rounded-sm my-1 "
+          className="bg-white dark:placeholder-gray-500  dark:bg-[#000] dark:text-gray-100 shadow lg:w-[22rem] md:w-[17rem] ml:w-[20rem] xl:w-[24rem] w-[21rem] sm:w-[23rem] px-2 py-2 border-t-1 border-color rounded-sm my-1 "
         />
 
         {label.toLowerCase() === "password" && (
