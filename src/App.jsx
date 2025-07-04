@@ -33,19 +33,22 @@ function App() {
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <div className="bg-[#fcfcfc] dark:bg-[#121212] min-h-screen">
         {!shouldHideNavbar && <Navbar />}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Jobs" element={<Jobs />} />
-          <Route path="/PostJob" element={<PostJob />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
 
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/JobDetails" element={<JobDetails />} />
-          <Route path="/EditJob" element={<EditJob />} />
-        </Routes>
+        <div className={!shouldHideNavbar ? "" : ""}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Jobs" element={<Jobs />} />
+            <Route path="/PostJob" element={<PostJob />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/JobDetails" element={<JobDetails />} />
+            <Route path="/EditJob" element={<EditJob />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );

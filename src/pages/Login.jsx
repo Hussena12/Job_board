@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AuthFormInput,
   AuthHeader,
@@ -49,11 +49,13 @@ const Login = () => {
         <AuthLayout>
           <AuthHeader text="Welcome back" />
           <AuthFormInput
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your.name@example.com "
             label="Email or Username "
           />
           <AuthFormInput
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
             label="Password"

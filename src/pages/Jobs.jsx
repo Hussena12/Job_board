@@ -4,7 +4,7 @@ import { SearchBar } from "../components";
 
 const Jobs = () => {
   return (
-    <div className="  z-10 ">
+    <div className="  ">
       <div className="flex justify-center m-6">
         <SearchBar />
       </div>

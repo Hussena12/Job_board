@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-const AuthFormInput = ({ label, placeholder, onChange }) => {
+const AuthFormInput = ({ label, placeholder, onChange, value }) => {
   const [showpassword, setShowpassword] = useState(false);
 
   const togglePassword = () => setShowpassword((prev) => !prev);
@@ -13,6 +13,7 @@ const AuthFormInput = ({ label, placeholder, onChange }) => {
           {label}
         </label>
         <input
+          value={value}
           onChange={onChange}
           type={
             label.toLowerCase() === "password" && !showpassword
