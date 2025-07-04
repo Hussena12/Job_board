@@ -86,18 +86,18 @@ const Footer = () => {
         </div>
       </div>
       <div className=" relative border-t-1 dark:border-gray-800 border-color  mx-8 md:mx-12 ml:mx-16  ">
-        <div className="py-8  flex justify-between">
+        <div className="pt-8 pb-8 md:pb-24  flex justify-between">
           <p className="text-[0.65rem] text-gray-500 dark:text-neutral-400">
-            &copy; GEtjob.inc {currentYear}
+            &copy; GEtjob Inc {currentYear}
           </p>
           <span
             onClick={handleToggle}
-            className="dark:text-neutral-400 text-gray-500"
+            className="dark:text-neutral-400 text-gray-500 cursor-default"
           >
             {currentMode === "light" ? (
-              <Sun className="h-5 w-5 " />
+              <Sun className="h-5 w-5 cursor-pointer " />
             ) : (
-              <Moon className="h-5 w-5" />
+              <Moon className="h-5 w-5 cursor-pointer" />
             )}
             {isToggled && <ThemeToggle />}
           </span>
