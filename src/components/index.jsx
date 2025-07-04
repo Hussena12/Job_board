@@ -21,3 +21,4 @@ export { default as SignAddition } from "./SignAddition";
 export { default as SignImage } from "./SignImage";
 export { default as PrivateRoute } from "./PrivateRoute";
 export { default as MobileNav } from "./MobileNav";
+export { default as ThemeToggle } from "./ThemeToggle";

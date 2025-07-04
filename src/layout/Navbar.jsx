@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
           </nav>
 
-          <div className="md:hidden flex  items-center text-3xl flex-end  ">
+          <div className="md:hidden flex  items-center text-3xl mx-2   ">
             <button
               className={isOpen ? "dark:text-gray-200" : ""}
               onClick={() => setIsOpen(!isOpen)}
@@ -64,7 +64,7 @@ const Navbar = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="w-8 h-8"
+                className="w-6 h-6 text-gray-500"
               >
                 {isOpen ? (
                   <path

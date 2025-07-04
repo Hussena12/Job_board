@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateContext } from "../contexts/useStateContext";
 import { Link } from "react-router-dom";
+import { ThemeToggle } from ".";
 
 const MobileNav = () => {
   const { isOpen, setIsOpen, setMode, currentMode } = useStateContext();
@@ -48,37 +49,6 @@ const MobileNav = () => {
             >
               Contact Us
             </Link>
-          </div>
-
-          <div className="mt-6 border-t-1 border-color p-4 m-4">
-            <p className="font-semibold text-lg dark:text-gray-200">
-              Theme Options
-            </p>
-
-            <div className="flex gap-2 dark:text-gray-200">
-              <input
-                id="light"
-                type="radio"
-                name="theme"
-                value="Light"
-                onChange={setMode}
-                className="cursor-pointer"
-                checked={currentMode === "Light"}
-              />
-              <label htmlFor="light">Light</label>
-            </div>
-            <div className="flex gap-2 dark:text-gray-200">
-              <input
-                id="dark"
-                type="radio"
-                name="theme"
-                value="Dark"
-                className="cursor-pointer"
-                onChange={setMode}
-                checked={currentMode === "Dark"}
-              />
-              <label htmlFor="dark">Dark</label>
-            </div>
           </div>
 
           <div className="mt-10 flex flex-col gap-4  items-center ">

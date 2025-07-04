@@ -120,6 +120,7 @@ text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
                   </div>
                   <div>
                     <Button
+                      className=""
                       text="Apply now"
                       color="white"
                       bgColor="black"
