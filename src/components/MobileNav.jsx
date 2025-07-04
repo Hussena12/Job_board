@@ -7,12 +7,12 @@ const MobileNav = () => {
   return (
     <>
       <div
-        className={`fixed md:hidden min-h-full w-2/3 shadow-xl bg-white dark:bg-[#171717] right-0 top-[3.5rem] transform transition-transform duration-300 ease-in-out z-30  border  ${
+        className={`fixed md:hidden min-h-full w-2/3 shadow-xl bg-white dark:bg-[#171717] right-0 top-0 transform transition-transform duration-300 ease-in-out z-30  border  ${
           isOpen ? "translate-x-0" : "translate-x-full "
         } `}
       >
         <div className=" m-6">
-          <div className="flex flex-col justify-center items-center pt-6 pb-6 gap-1 dark:text-gray-200 text-center">
+          <div className="flex flex-col justify-center items-center pt-16 pb-6 gap-1 dark:text-gray-200 text-center">
             <Link
               className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
               to="/"
