@@ -39,7 +39,10 @@ const ContactUs = () => {
         <div className="py-4 max-w-[30rem]  rounded-md  ">
           <Contact2Form label1="First name" label2="Last name" />
           <ContactForm placeholder="example@email.com" label="Email" />
-          <ContactForm placeholder="+923456789" label="Phone Number" />
+          <ContactForm
+            placeholder="+251923456789"
+            label="Phone Number (optional)"
+          />
           <div className="flex justify-center">
             <div className="flex flex-col mt-4 ">
               <label className="text-gray-600 dark:text-gray-300">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Button,
@@ -8,9 +8,9 @@ import {
   PostInput,
   PostSelect,
 } from "@/components";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FiEye, FiSave, FiPlus } from "react-icons/fi";
-import Select from "react-select";
+import { useStateContext } from "@/contexts/useStateContext";
 
 const options1 = [
   { value: "Full-time", label: "Full-time" },
@@ -25,9 +25,105 @@ const options2 = [
 ];
 
 const PostJob = () => {
+  const { currentMode } = useStateContext();
+  const isDarkMode = currentMode === "dark";
+
+  const { jobId } = useParams();
+  const [formData, setFormData] = useState({
+    jobTitle: "",
+    appLink: "",
+    address: "",
+    State: "",
+    City: "",
+    description: "",
+    employmentType: "",
+    employmentShift: "",
+    minSalary: "",
+    maxSalary: "",
+  });
+
+  // State to pass initial values to CountryCitySelector in edit mode
+  const [initialLocation, setInitialLocation] = useState({
+    country: null,
+    city: null,
+  });
+
+  // useEffect to load existing job data (simplified for this example, assumes getJobById exists)
+  useEffect(() => {
+    if (jobId) {
+      // Simulate fetching existing job data
+      const existingJob = {
+        id: jobId,
+        jobTitle: "Senior Developer",
+        country: "Ethiopia",
+        countryIso: "ET",
+        city: "Addis Ababa",
+        employmentType: "Full-time",
+        employmentShift: "Remote",
+        // ... other fields
+      };
+
+      if (existingJob) {
+        setFormData({
+          ...existingJob,
+          // Format the existing string values into { value, label } objects for react-select
+          employmentType:
+            employmentTypeOptions.find(
+              (opt) => opt.value === existingJob.employmentType
+            ) || null,
+          employmentShift:
+            employmentShiftOptions.find(
+              (opt) => opt.value === existingJob.employmentShift
+            ) || null,
+        });
+        setInitialLocation({
+          country:
+            existingJob.country && existingJob.countryIso
+              ? { value: existingJob.countryIso, label: existingJob.country }
+              : null,
+          city: existingJob.city
+            ? { value: existingJob.city, label: existingJob.city }
+            : null,
+        });
+      }
+    }
+  }, [jobId]);
+
+  const handleSelectChange = (selectedOption, { name }) => {
+    // selectedOption is the { value: '...', label: '...' } object
+    // name is the 'name' prop you passed to PostSelect
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: selectedOption, // Store the entire object in formData
+    }));
+  };
+
+  // Handler for CountryCitySelector
+  const handleLocationChange = ({ country, countryIso, city }) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      country: country,
+      countryIso: countryIso,
+      city: city,
+    }));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData, // Keep all existing form data
+      [name]: value, // Update only the field that changed
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <div>
-      <div className="flex px-5 md:pr-9 justify-between py-2 border-b-1">
+      <div className="  z-30 flex px-5 md:pr-9 bg-white dark:bg-[#111111] justify-between py-2 border-b-1">
         <div className="flex items-center">
           <Link to="/">
             <svg
@@ -75,7 +171,7 @@ const PostJob = () => {
         </div>
       </div>
 
-      <div className="py-6 mx-3 px-4 ">
+      <form onSubmit={handleSubmit} className="py-6 mx-3 px-4 ">
         <div className=" border-b-1 pb-6 ">
           <p className="text-2xl font-semibold dark:text-gray-100">
             Create Jobs
@@ -93,26 +189,46 @@ const PostJob = () => {
 
           <div className="mt-8  ">
             <PostInput
+              name="jobTitle"
+              value={formData.jobTitle}
+              onChange={handleChange}
               label="Job title"
               placeholder="Backend engineer"
               className="lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
             <PostInput
+              name="appLink"
+              value={formData.appLink}
+              onChange={handleChange}
               label="Application link (optional)"
               className="lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
             <PostInput
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
               label="Address"
               placeholder=" 123 Addis"
               className=" lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
 
             <div className="flex gap-2 ">
-              <PostSelect className="w-28 sm:w-32 lg:w-[9rem]" label="State" />
-              <PostSelect className="w-28 sm:w-32 lg:w-[9rem]" label="City" />
+              <PostSelect
+                isDarkMode={isDarkMode}
+                className="w-28 sm:w-32 lg:w-[9rem]"
+                label="State"
+              />
+              <PostSelect
+                isDarkMode={isDarkMode}
+                className="w-28 sm:w-32 lg:w-[9rem]"
+                label="City"
+              />
 
               <PostInput
-                label="Zip Code"
+                name="jobTitle"
+                value={formData.jobTitle}
+                onChange={handleChange}
+                label="Zip Code (optional)"
                 placeholder=" 1234"
                 className="  w-[6.5rem] sm:w-32 lg:w-[9rem] h-[2.375rem]"
               />
@@ -131,18 +247,13 @@ const PostJob = () => {
 
         <div className="md:flex border-b-1">
           <PostHeader
-            title="3. Employment type"
+            title="3. Employment "
             subtitle="Description text goes in here"
           ></PostHeader>
+
           <div className="flex gap-4 mt-5   pb-5">
-            <PostSelect
-              className="w-32 sm:w-36 lg:w-[10rem]"
-              label="Employment type"
-            />
-            <PostSelect
-              className="w-32 sm:w-36 lg:w-[10rem]"
-              label="Shift type"
-            />
+            <PostSelect className="w-32 sm:w-36 lg:w-[10rem]" label=" type" />
+            <PostSelect className="w-32 sm:w-36 lg:w-[10rem]" label=" type" />
           </div>
         </div>
 
@@ -153,11 +264,17 @@ const PostJob = () => {
           <div className="mt-6 pb-5">
             <div className="flex gap-4">
               <PostInput
+                name="minSalary"
+                value={formData.minSalary}
+                onChange={handleChange}
                 label="min-salary"
                 placeholder="$20k"
                 className="w-32 sm:w-36 lg:w-[10rem] h-[2.375rem]"
               />
               <PostInput
+                name="maxSalary"
+                value={formData.maxSalary}
+                onChange={handleChange}
                 label="max-salary"
                 placeholder="$100k"
                 className=" w-32 sm:w-36 lg:w-[10rem] h-[2.375rem] text-md"
@@ -166,7 +283,7 @@ const PostJob = () => {
             <CheckBox id="Negotiable" text="Negotiable" />
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

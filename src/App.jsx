@@ -15,6 +15,7 @@ import {
 
 import { Navbar } from "./layout";
 import { useStateContext } from "./contexts/useStateContext";
+import { PrivateRoute } from "./components";
 
 const AppWrapper = () => (
   <BrowserRouter>
@@ -41,7 +42,14 @@ function App() {
             <Route path="/PostJob" element={<PostJob />} />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route
+              path="/Dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
 
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
