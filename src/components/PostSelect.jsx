@@ -20,15 +20,14 @@ const PostSelect = ({
             {label}
           </label>
           <Select
-            isDarkMode={isDarkMode}
             value={value}
             onChange={onChange}
+            options={options}
             placeholder={placeholder}
             isClearable
             isSearchable
             styles={customSelectStyles}
-            options={options}
-            className={` ${className} dark:bg-[#171717]`}
+            className={` ${className} `}
             menuPosition="fixed"
           />
         </div>

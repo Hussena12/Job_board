@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Select from "react-select";
+import React, { useState, useEffect, useRef } from "react";
 import { Country, City } from "country-state-city";
-import { PostSelect } from "../components/PostSelect";
+import PostSelect from "@/components/PostSelect";
+import { useSelectStyle } from "@/hooks/useSelectStyle";
 
 // Helper function to format data for react-select
 const formatForSelect = (data, valueKey, labelKey) => {
@@ -12,7 +12,7 @@ const formatForSelect = (data, valueKey, labelKey) => {
   }));
 };
 
-const StateCitySelector = ({ onLocationChange }) => {
+const StateCitySelector = ({ onLocationChange, initialSelectedCountry }) => {
   // State for selected values
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -21,42 +21,77 @@ const StateCitySelector = ({ onLocationChange }) => {
   const [countries, setCountries] = useState([]);
   const [cities, setCities] = useState([]);
 
+  const customSelectStyles = useSelectStyle();
+
+  const isFirstRender = useRef(true);
+
   // 1. Load all countries on initial mount
   useEffect(() => {
     const allCountries = Country.getAllCountries();
     setCountries(formatForSelect(allCountries, "isoCode", "name"));
-  }, []); // Runs once on component mount
+  }, []);
 
   // 2. Load cities when a country is selected or changes
   useEffect(() => {
     if (selectedCountry) {
-      // IMPORTANT: When getting cities without states, you pass the country's ISO code only
       const countryCities = City.getCitiesOfCountry(selectedCountry.value);
-      setCities(formatForSelect(countryCities, "name", "name")); // City's value and label are typically just the name
-      setSelectedCity(null); // Reset selected city when country changes
+      setCities(formatForSelect(countryCities, "name", "name"));
+      if (selectedCountry.value !== initialSelectedCountry?.value) {
+        setSelectedCity(null);
+      }
     } else {
-      setCities([]); // Clear cities if no country is selected
+      setCities([]);
+      setSelectedCity(null);
     }
-  }, [selectedCountry]); // Runs when selectedCountry changes
+  }, [selectedCountry, initialSelectedCountry]);
 
   // 3. Notify parent component about the current selection
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+
+      return;
+    }
+
     if (onLocationChange) {
       onLocationChange({
         country: selectedCountry ? selectedCountry.label : null,
         countryIso: selectedCountry ? selectedCountry.value : null,
-        // state: null, // Explicitly set state to null or remove if not needed in parent's state
-        // stateIso: null,
         city: selectedCity ? selectedCity.label : null,
       });
     }
   }, [selectedCountry, selectedCity, onLocationChange]);
+
+  const handleCountryChange = (selectedOption) => {
+    setSelectedCountry(selectedOption);
+  };
+
+  const handleCityChange = (selectedOption) => {
+    setSelectedCity(selectedOption);
+  };
+
+  return (
+    <div className="flex gap-4 mt-5   pb-5">
+      <PostSelect
+        id="country-select"
+        options={countries}
+        value={selectedCountry}
+        onChange={handleCountryChange}
+        styles={customSelectStyles}
+        className="w-27 sm:w-48 lg:w-[13.5rem]"
+        label=" type"
+      />
+      <PostSelect
+        id="city-select"
+        options={cities}
+        value={selectedCity}
+        onChange={handleCityChange}
+        styles={customSelectStyles}
+        className="w-27 sm:w-48 lg:w-[13.5rem]"
+        label=" type"
+      />
+    </div>
+  );
 };
 
-return (
-  <div className="flex gap-4 mt-5   pb-5">
-    <PostSelect className="w-32 sm:w-36 lg:w-[10rem]" label=" type" />
-    <PostSelect className="w-32 sm:w-36 lg:w-[10rem]" label=" type" />
-  </div>
-);
 export default StateCitySelector;
