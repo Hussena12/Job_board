@@ -4,8 +4,10 @@ const jobContext = createContext();
 export const JobProvider = ({ children }) => {
   // local storage to persost  jobs
   const [jobs, setJobs] = useState(() => {
+    const storedJobs = localStorage.getItem("postedJobs");
+    console.log("Initial localStorage read:", storedJobs);
+
     try {
-      const storedJobs = localStorage.getItem("postedJobs");
       return storedJobs ? JSON.parse(storedJobs) : [];
     } catch (err) {
       console.error("Failed to parse stored jobs from localStorage");
@@ -15,6 +17,7 @@ export const JobProvider = ({ children }) => {
 
   // save jobs to localstorage whenever 'jobs' state changes
   useEffect(() => {
+    console.log("Jobs updated:", jobs);
     try {
       localStorage.setItem("postedJobs", JSON.stringify(jobs));
     } catch (err) {
@@ -27,6 +30,7 @@ export const JobProvider = ({ children }) => {
     setJobs((prevJobs) => [...prevJobs, { ...newJob, id: Date.now() }]);
   };
 
+  console.log(jobs);
   // value provided to consume
   const contextValue = {
     jobs,

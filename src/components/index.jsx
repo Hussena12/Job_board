@@ -24,3 +24,4 @@ export { default as MobileNav } from "./MobileNav";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as StateCitySelector } from "./StateCitySelector";
 export { default as SelectStyles } from "./SelectStyles";
+export { default as PostCard } from "./PostCard";

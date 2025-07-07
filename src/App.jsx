@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
-  Dashboard,
   EditJob,
   Home,
   JobDetails,
@@ -13,17 +12,19 @@ import {
   ContactUs,
 } from "./pages";
 
+import { Dashboard, MyPostedJob } from "./Dashboard";
+
 import { Navbar } from "./layout";
 import { useStateContext } from "./contexts/useStateContext";
 import { PrivateRoute } from "./components";
 import { JobProvider } from "./contexts/JobContext";
 
 const AppWrapper = () => (
-  <BrowserRouter>
-    <JobProvider>
+  <JobProvider>
+    <BrowserRouter>
       <App />
-    </JobProvider>
-  </BrowserRouter>
+    </BrowserRouter>
+  </JobProvider>
 );
 
 function App() {
@@ -40,11 +41,16 @@ function App() {
 
         <div className={!shouldHideNavbar ? "" : ""}>
           <Routes>
+            {/* pages */}
             <Route path="/" element={<Home />} />
             <Route path="/Jobs" element={<Jobs />} />
             <Route path="/PostJob" element={<PostJob />} />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
+
+            {/* dashboard */}
             <Route
               path="/Dashboard"
               element={
@@ -53,9 +59,8 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="/MyPostedJob" element={<MyPostedJob />} />
 
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
             <Route path="/JobDetails" element={<JobDetails />} />
             <Route path="/EditJob" element={<EditJob />} />
           </Routes>

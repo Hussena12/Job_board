@@ -32,9 +32,6 @@ const Navbar = () => {
               <Link className="hover:text-[#3ecf8e]" to="/ContactUs">
                 Contact Us
               </Link>
-              <Link className="hover:text-[#3ecf8e]" to="/Dashboard">
-                Dashboard
-              </Link>
             </div>
 
             <div className="flex-1 flex justify-end items-center">

@@ -66,11 +66,11 @@ const Login = () => {
           <SubmitButton text="Log in" />
           {error && <p className="text-red-600 py-4 text-center">{error}</p>}
           <div className="flex flex-col">
-            <p className="flex justify-center gap-4 items-center p-6 text-sm text-gray-600">
+            <div className="flex justify-center gap-4 items-center p-6 text-sm text-gray-600">
               <hr className="w-20" />
               <span className="dark:text-gray-300">or</span>
               <hr className="w-20" />
-            </p>
+            </div>
 
             <p className="flex  gap-3 items-center justify-center text-sm  ">
               <img
