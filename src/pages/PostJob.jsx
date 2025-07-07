@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelectStyle } from "@/hooks/useSelectStyle";
+import { useJobs } from "../contexts/JobContext";
 
 import {
   Button,
@@ -9,7 +10,7 @@ import {
   PostSelect,
   StateCitySelector,
 } from "@/components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiSave, FiPlus } from "react-icons/fi";
 
 const options1 = [
@@ -25,6 +26,8 @@ const options2 = [
 ];
 
 const PostJob = () => {
+  const { addJob } = useJobs();
+  const navigate = useNavigate();
   const customSelectStyles = useSelectStyle();
   const [formData, setFormData] = useState({
     jobTitle: "",
@@ -33,6 +36,7 @@ const PostJob = () => {
     description: "",
     minSalary: "",
     maxSalary: "",
+    isNegotiable: false,
   });
 
   // State to pass initial values to CountryCitySelector in edit mode
@@ -52,18 +56,55 @@ const PostJob = () => {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
 
-    setFormData((prevData) => ({
-      ...prevData, // Keep all existing form data
-      [name]: value, // Update only the field that changed
-    }));
+    setFormData((prevData) => {
+      let newData = { ...prevData };
+      if (type === "checkbox") {
+        newData[name] = checked;
+
+        if (name === "isNegotiable" && checked) {
+          newData.isNegotiable = "Negotiable";
+          newData.minSalary = "";
+          newData.maxSalary = "";
+        }
+      } else {
+        newData[name] = value;
+      }
+
+      return newData;
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    const dataToSubmit = { ...formData };
+
+    if (dataToSubmit.isNegotiable) {
+      dataToSubmit.minSalary = "";
+      dataToSubmit.maxSalary = "";
+    }
+
+    console.log(dataToSubmit);
+    addJob(dataToSubmit);
+
+    setFormData({
+      jobTitle: "",
+      appLink: "",
+      address: "",
+      country: null,
+      countryIso: null,
+      city: null,
+      description: "",
+      minSalary: "",
+      maxSalary: "",
+      isNegotiable: false,
+    });
+
+    navigate("/MyPostedJob");
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="  z-30 flex px-5 md:pr-9 bg-white dark:bg-[#111111] justify-between py-2 border-b-1">
@@ -184,13 +225,13 @@ const PostJob = () => {
             <PostSelect
               options={options1}
               styles={customSelectStyles}
-              className="w-32 sm:w-36 lg:w-[10rem]"
+              className="w-40 sm:w-48 lg:w-[10rem]"
               label=" type"
             />
             <PostSelect
               options={options2}
               styles={customSelectStyles}
-              className="w-32 sm:w-36 lg:w-[10rem]"
+              className="w-40 sm:w-48 lg:w-[10rem]"
               label=" type"
             />
           </div>
@@ -219,7 +260,12 @@ const PostJob = () => {
                 className=" w-32 sm:w-36 lg:w-[10rem] h-[2.375rem] text-md"
               />
             </div>
-            <CheckBox id="Negotiable" text="Negotiable" />
+            <CheckBox
+              checked={formData.isNegotiable}
+              onChange={handleChange}
+              name="isNegotiable"
+              text="Negotiable"
+            />
           </div>
         </div>
       </div>

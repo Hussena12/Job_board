@@ -8,3 +8,4 @@ export { default as PostJob } from "./PostJob";
 export { default as Register } from "./Register";
 export { default as AboutUs } from "./AboutUs";
 export { default as ContactUs } from "./ContactUs";
+export { default as MyPostedJob } from "./MyPostedJob";

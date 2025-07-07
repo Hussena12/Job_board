@@ -27,7 +27,7 @@ const PostSelect = ({
             isClearable
             isSearchable
             styles={customSelectStyles}
-            className={` ${className} `}
+            className={` ${className} text-sm shadow `}
             menuPosition="fixed"
           />
         </div>

@@ -78,7 +78,7 @@ const StateCitySelector = ({ onLocationChange, initialSelectedCountry }) => {
         value={selectedCountry}
         onChange={handleCountryChange}
         styles={customSelectStyles}
-        className="w-27 sm:w-48 lg:w-[13.5rem]"
+        className="w-40 sm:w-48 lg:w-[13.5rem]"
         label=" type"
       />
       <PostSelect
@@ -87,7 +87,7 @@ const StateCitySelector = ({ onLocationChange, initialSelectedCountry }) => {
         value={selectedCity}
         onChange={handleCityChange}
         styles={customSelectStyles}
-        className="w-27 sm:w-48 lg:w-[13.5rem]"
+        className="w-40 sm:w-48 lg:w-[13.5rem] "
         label=" type"
       />
     </div>

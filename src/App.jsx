@@ -16,10 +16,13 @@ import {
 import { Navbar } from "./layout";
 import { useStateContext } from "./contexts/useStateContext";
 import { PrivateRoute } from "./components";
+import { JobProvider } from "./contexts/JobContext";
 
 const AppWrapper = () => (
   <BrowserRouter>
-    <App />
+    <JobProvider>
+      <App />
+    </JobProvider>
   </BrowserRouter>
 );
 
