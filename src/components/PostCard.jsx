@@ -6,15 +6,14 @@ import { Button } from "@/components";
 const Tags = ({ children }) => {
   return (
     <div>
-      <p className=" ml-2 bg-gray-200 text-gray-700  py-[0.1rem] px-[0.3rem] font-semibold text-xs rounded-sm leading-tight dark:bg-[#111111] dark:text-[#D3D3D3]">
+      <div className=" ml-2 bg-gray-200 text-gray-700  py-[0.1rem] px-[0.3rem] font-semibold text-xs rounded-sm leading-tight dark:bg-[#111111] dark:text-[#D3D3D3]">
         {children}
-      </p>
+      </div>
     </div>
   );
 };
 
 const PostCard = ({ job }) => {
-  console.log(job);
   return (
     <div className="flex mt-10 flex-wrap gap-4 justify-center ">
       <div className="  dark:bg-[#171717]  border shadow-md dark:border-gray-900	 dark:text-gray-200 w-[21rem] rounded-xl px-6 py-2 justify-center bg-gray-50">
@@ -33,7 +32,7 @@ const PostCard = ({ job }) => {
         <p className="flex flex-col  justify-center">
           <span className="flex gap-2  ">
             <span className=" text-sm text-gray-700 font-semibold  dark:text-gray-300">
-              {job.Employer || "Unknown Company"}
+              {job.company || "Unknown Company"}
             </span>
             <span className="text-xs font-semibold text-gray-600	dark:text-gray-400">
               {job.posted_at || "Recently posted"}
@@ -43,12 +42,12 @@ const PostCard = ({ job }) => {
         </p>
 
         <div className="flex gap-4   ">
-          <Tags></Tags>
-          <Tags></Tags>
+          <Tags>{job.jobShift}</Tags>
+          <Tags>{job.jobType}</Tags>
         </div>
 
         <div className="mt-4  text-xs">
-          <p className="mb-2"></p>
+          <p className="mb-2">{job.description}</p>
           <Link className="underline">See Details...</Link>
         </div>
         <hr className="border-t border-gray-300 mb-2" />
@@ -63,7 +62,14 @@ const PostCard = ({ job }) => {
             </p>
           </div>
           <div>
-            <Button />
+            <Button
+              className=""
+              text="Apply now"
+              color="white"
+              bgColor="black"
+              borderRadius="4px"
+              size="2"
+            />
           </div>
         </div>
       </div>

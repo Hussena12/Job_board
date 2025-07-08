@@ -13,7 +13,7 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="lg:flex md:gap-6 mx-8 md:mx-12 ml:mx-16 border-t-1 border-color dark:border-gray-800">
+      <div className="lg:flex md:gap-6 mx-8 md:mx-12 ml:mx-16 border-t-1 border-color dark:border-[#2e2e2e]">
         <div className="flex  flex-col gap-4 my-6 lg:py-6 lg:pr-12">
           <p className="mb-2 dark:text-white">GEtjob</p>
           <SocialIcon />
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" relative border-t-1 dark:border-gray-800 border-color  mx-8 md:mx-12 ml:mx-16  ">
+      <div className=" relative border-t-1 dark:border-[#2e2e2e] border-color  mx-8 md:mx-12 ml:mx-16  ">
         <div className="pt-8 pb-8 md:pb-24  flex justify-between">
           <p className="text-[0.65rem] text-gray-500 dark:text-neutral-400">
             &copy; GEtjob Inc {currentYear}

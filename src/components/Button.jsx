@@ -11,16 +11,15 @@ const Button = ({
   borderRadius,
   onClick,
   icon,
-  ...props
+  type,
 }) => {
   return (
     <div>
       <button
+        type={type}
         onClick={onClick}
-        type="button"
         style={{ backgroundColor: bgColor, color, borderRadius, padding }}
         className={` text-${size} px-2 py-1 hover:drop-shadow-sm ${className} flex gap-2 items-center `}
-        {...props}
       >
         <span>{icon}</span>
         {text}

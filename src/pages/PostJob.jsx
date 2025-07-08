@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useSelectStyle } from "@/hooks/useSelectStyle";
 import { useJobs } from "../contexts/JobContext";
 
 import {
@@ -7,35 +6,27 @@ import {
   CheckBox,
   PostHeader,
   PostInput,
-  PostSelect,
+  SelectEmployment,
   StateCitySelector,
 } from "@/components";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiSave, FiPlus } from "react-icons/fi";
 
-const options1 = [
-  { value: "Full-time", label: "Full-time" },
-  { value: "Part-time", label: "Part-time" },
-  { value: "Weekend", label: "Weekend" },
-];
-
-const options2 = [
-  { value: "On-site", label: "On-site" },
-  { value: "Remote", label: "Remote" },
-  { value: "Hybrid", label: "Hybrid" },
-];
-
 const PostJob = () => {
   const { addJob } = useJobs();
   const navigate = useNavigate();
-  const customSelectStyles = useSelectStyle();
+
   const [formData, setFormData] = useState({
+    id: Date.now(),
     jobTitle: "",
+    jobShift: "",
+    jobShift: "",
     appLink: "",
     address: "",
     description: "",
     minSalary: "",
     maxSalary: "",
+    company: "",
     isNegotiable: false,
   });
 
@@ -52,6 +43,14 @@ const PostJob = () => {
       country: country,
       countryIso: countryIso,
       city: city,
+    }));
+  }, []);
+
+  const handleEmploymentChange = useCallback(({ jobType, jobShift }) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      jobType: jobType?.value || "",
+      jobShift: jobShift?.value || "",
     }));
   }, []);
 
@@ -91,12 +90,16 @@ const PostJob = () => {
 
     setFormData({
       jobTitle: "",
+      jobShift: "",
+      jobType: "",
       appLink: "",
+
       address: "",
       country: null,
       countryIso: null,
       city: null,
       description: "",
+      company: "",
       minSalary: "",
       maxSalary: "",
       isNegotiable: false,
@@ -189,6 +192,14 @@ const PostJob = () => {
               className="lg:w-[28rem] w-[16rem] sm:w-[25rem] "
             />
             <PostInput
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              label="Company"
+              placeholder="Microsoft"
+              className=" lg:w-[28rem] w-[16rem] sm:w-[25rem] "
+            />
+            <PostInput
               name="address"
               value={formData.address}
               onChange={handleChange}
@@ -221,19 +232,8 @@ const PostJob = () => {
             subtitle="Description text goes in here"
           ></PostHeader>
 
-          <div className="flex gap-4 mt-5   pb-5">
-            <PostSelect
-              options={options1}
-              styles={customSelectStyles}
-              className="w-40 sm:w-48 lg:w-[10rem]"
-              label=" type"
-            />
-            <PostSelect
-              options={options2}
-              styles={customSelectStyles}
-              className="w-40 sm:w-48 lg:w-[10rem]"
-              label=" type"
-            />
+          <div className="flex  mt-5  ">
+            <SelectEmployment onTypeChange={handleEmploymentChange} />
           </div>
         </div>
 

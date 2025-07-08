@@ -14,7 +14,7 @@ const ContactUs = () => {
             Any question? We would be happy to help you!
           </p>
           <div className="flex flex-col gap-6">
-            <p className="py-3 px-4 border-1 border-color dark:border-gray-800  rounded-md">
+            <p className="py-3 px-4 border-1 border-color dark:border-[#2e2e2e]  rounded-md">
               <span></span>
               <span>+0123456789</span>
             </p>
@@ -22,7 +22,7 @@ const ContactUs = () => {
               <span></span>
               <span>example@email.com</span>
             </p>
-            <p className="py-3 px-4 border-1 border-color dark:border-gray-800 rounded-md">
+            <p className="py-3 px-4 border-1 border-color dark:border-[#2e2e2e] rounded-md">
               <span></span>
               <span>775 Rolling Green Rd.</span>
             </p>
@@ -33,7 +33,7 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="lg:w-px bg-gray-200 dark:bg-gray-700"></div>
+      <div className="lg:w-px bg-gray-200 dark:bg-[#2e2e2e]"></div>
 
       <div className="flex-1 flex justify-center ml:w-[50%] ">
         <div className="py-4 max-w-[30rem]  rounded-md  ">

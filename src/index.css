@@ -72,3 +72,6 @@ body,
 #root {
   height: 100%;
 }
+body {
+  font-display: swap; /* Shows fallback font first */
+}
