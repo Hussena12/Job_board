@@ -1,5 +1,5 @@
 import { Editor } from "@tinymce/tinymce-react";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 // Helper function for debouncing
 const debounce = (fn, delay) => {
@@ -25,7 +25,7 @@ const RichTextEditor = ({
   const [error, setError] = useState(null);
 
   // Get your FREE API key from https://www.tiny.cloud/
-  const apiKey = import.meta.env.VITE_TINYMACE_KEY;
+  const apiKey = "w7t81xkx2ipet8jgam8fl3xbqy8sflyn1d7vathsq0x50sab";
 
   const handleSave = useCallback(() => {
     try {

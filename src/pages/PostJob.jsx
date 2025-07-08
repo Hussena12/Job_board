@@ -26,7 +26,7 @@ const PostJob = () => {
     id: Date.now(),
     jobTitle: "",
     jobShift: "",
-    jobShift: "",
+    jobType: "",
     appLink: "",
     address: "",
     description: "",
