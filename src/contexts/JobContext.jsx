@@ -17,7 +17,6 @@ export const JobProvider = ({ children }) => {
 
   // save jobs to localstorage whenever 'jobs' state changes
   useEffect(() => {
-    console.log("Jobs updated:", jobs);
     try {
       localStorage.setItem("postedJobs", JSON.stringify(jobs));
     } catch (err) {
