@@ -11,10 +11,16 @@ import {
 } from "@/components";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiSave, FiPlus } from "react-icons/fi";
+import RichTextEditor from "@/components/RichtextEditor";
 
 const PostJob = () => {
   const { addJob } = useJobs();
   const navigate = useNavigate();
+
+  const handleSave = (html) => {
+    console.log("Saving:", html);
+    // Submit to your backend
+  };
 
   const [formData, setFormData] = useState({
     id: Date.now(),
@@ -27,6 +33,9 @@ const PostJob = () => {
     minSalary: "",
     maxSalary: "",
     company: "",
+    country: null,
+    countryIso: null,
+    city: null,
     isNegotiable: false,
   });
 
@@ -49,8 +58,8 @@ const PostJob = () => {
   const handleEmploymentChange = useCallback(({ jobType, jobShift }) => {
     setFormData((prevData) => ({
       ...prevData,
-      jobType: jobType?.value || "",
-      jobShift: jobShift?.value || "",
+      jobType: jobType || "",
+      jobShift: jobShift || "",
     }));
   }, []);
 
@@ -93,7 +102,6 @@ const PostJob = () => {
       jobShift: "",
       jobType: "",
       appLink: "",
-
       address: "",
       country: null,
       countryIso: null,
@@ -223,7 +231,9 @@ const PostJob = () => {
             subtitle="Provide a short description about the job"
           ></PostHeader>
 
-          <div className="flex gap-4 mt-5   pb-5"></div>
+          <div className="flex gap-4 mt-5   pb-5">
+            <RichTextEditor onSave={handleSave} />
+          </div>
         </div>
 
         <div className="md:flex border-b-1">

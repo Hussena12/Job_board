@@ -7,6 +7,9 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  optimizeDeps: {
+    include: ["novel"],
+  },
   resolve: {
     alias: {
       // Your existing alias

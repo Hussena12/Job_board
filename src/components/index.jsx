@@ -26,3 +26,4 @@ export { default as StateCitySelector } from "./StateCitySelector";
 export { default as SelectStyles } from "./SelectStyles";
 export { default as PostCard } from "./PostCard";
 export { default as SelectEmployment } from "./SelectEmployment";
+export { default as RichtextEditor } from "./RichtextEditor";

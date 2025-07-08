@@ -15,8 +15,8 @@ const options2 = [
 ];
 
 const SelectEmployment = ({ onTypeChange }) => {
-  const [jobShift, setJobShift] = useState("");
-  const [jobType, setJobType] = useState("");
+  const [jobShift, setJobShift] = useState(null);
+  const [jobType, setJobType] = useState(null);
 
   const customSelectStyles = useSelectStyle();
 
@@ -39,7 +39,7 @@ const SelectEmployment = ({ onTypeChange }) => {
   return (
     <div className="flex gap-4 mt-5   pb-5">
       <PostSelect
-        value={jobShift.value}
+        value={jobShift}
         onChange={handleJobShift}
         name="shift"
         options={options1}
@@ -48,7 +48,7 @@ const SelectEmployment = ({ onTypeChange }) => {
         label=" Shift"
       />
       <PostSelect
-        value={jobType.value}
+        value={jobType}
         onChange={handleJobType}
         name="type"
         options={options2}
