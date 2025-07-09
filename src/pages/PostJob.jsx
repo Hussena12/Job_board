@@ -17,11 +17,6 @@ const PostJob = () => {
   const { addJob } = useJobs();
   const navigate = useNavigate();
 
-  const handleSave = (html) => {
-    console.log("Saving:", html);
-    // Submit to your backend
-  };
-
   const [formData, setFormData] = useState({
     id: Date.now(),
     jobTitle: "",
@@ -72,7 +67,6 @@ const PostJob = () => {
         newData[name] = checked;
 
         if (name === "isNegotiable" && checked) {
-          newData.isNegotiable = "Negotiable";
           newData.minSalary = "";
           newData.maxSalary = "";
         }

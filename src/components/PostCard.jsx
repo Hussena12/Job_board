@@ -38,7 +38,7 @@ const PostCard = ({ job }) => {
               {job.posted_at || "Recently posted"}
             </span>
           </span>
-          <span className="text-md font-semibold ">{job.JobTitle}</span>
+          <span className="text-md font-semibold ">{job.jobTitle}</span>
         </p>
 
         <div className="flex gap-4   ">
@@ -55,15 +55,21 @@ const PostCard = ({ job }) => {
         <div className="flex  justify-between">
           <div>
             <p className="text-base font-medium text-green-600">
-              {job.isNegotiable || "Negotiable"}
+              {job.isNegotiable ? (
+                "Negotiable"
+              ) : (
+                <span>
+                  ${job.minSalary}k - ${job.maxSalary}k
+                </span>
+              )}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              {job.city || "Location unknown"}
+              {job.city}, {job.countryIso}
             </p>
           </div>
           <div>
             <Button
-              className=""
+              className="text-sm"
               text="Apply now"
               color="white"
               bgColor="black"
