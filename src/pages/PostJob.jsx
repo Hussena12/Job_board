@@ -8,10 +8,10 @@ import {
   PostInput,
   SelectEmployment,
   StateCitySelector,
+  TextEditor,
 } from "@/components";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiSave, FiPlus } from "react-icons/fi";
-import RichTextEditor from "@/components/RichtextEditor";
 
 const PostJob = () => {
   const { addJob } = useJobs();
@@ -231,8 +231,21 @@ const PostJob = () => {
             subtitle="Provide a short description about the job"
           ></PostHeader>
 
-          <div className="flex gap-4 mt-5   pb-5">
-            <RichTextEditor onSave={handleSave} />
+          <div className="flex gap-4 mt-5 pb-5">
+            <TextEditor
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Put your job description here..."
+            />
+
+            {/* <PostInput
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              placeholder=" 123 Addis"
+              className=" lg:w-[28rem] w-[21rem] h-[12rem] sm:w-[25rem] "
+            /> */}
           </div>
         </div>
 

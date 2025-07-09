@@ -55,7 +55,7 @@ const PostCard = ({ job }) => {
         <div className="flex  justify-between">
           <div>
             <p className="text-base font-medium text-green-600">
-              {job.minSalary || "Negotiable"}
+              {job.isNegotiable || "Negotiable"}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
               {job.city || "Location unknown"}
