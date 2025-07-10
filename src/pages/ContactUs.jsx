@@ -31,9 +31,8 @@ const ContactUs = () => {
         setTimeout(resolve, 1000);
 
         setIsSubmitting(false);
+        e.target.reset();
       });
-
-      e.target.reset();
     } catch (err) {
       alert("failed to send:" + err.text);
     } finally {
@@ -72,20 +71,21 @@ const ContactUs = () => {
       </div>
 
       <div className="lg:w-px bg-gray-200 dark:bg-[#2e2e2e]"></div>
-      {isSuccess && (
-        <div className="success-message flex gap-2">
-          <span className="success-check w-6 h-6 rounded-full bg-[#4caf50] text-white ">
-            ✓
-          </span>
-          <p>Thank you! We've received your message.</p>
-        </div>
-      )}
+
       <form
         ref={form}
         onSubmit={sendEmail}
         id="contact-form"
-        className="flex-1 flex justify-center ml:w-[50%] "
+        className="flex-1 flex justify-center ml:w-[50%]  flex-col items-center "
       >
+        {isSuccess && (
+          <div className="success-message flex gap-2">
+            <span className="success-check w-6 h-6 rounded-full bg-[#4caf50] text-white ">
+              ✓
+            </span>
+            <p>Thank you! We've received your message.</p>
+          </div>
+        )}
         <div className="py-4 max-w-[30rem]  rounded-md  ">
           <Contact2Form label1="First name" label2="Last name" />
           <ContactForm
