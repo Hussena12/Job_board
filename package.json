@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@supabase/supabase-js": "^2.50.2",
     "@syncfusion/ej2-base": "19.4.52",
     "@syncfusion/ej2-react-richtexteditor": "19.4.50",
@@ -28,6 +29,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "country-state-city": "^3.2.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.516.0",
     "novel": "^1.0.2",
     "react": "^18.3.1",
