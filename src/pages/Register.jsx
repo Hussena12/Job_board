@@ -17,6 +17,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [message, setMessage] = useState(false);
 
   const { session, signUpNewUser } = userAuth();
   console.log(session);
@@ -28,12 +29,19 @@ const Register = () => {
     try {
       const result = await signUpNewUser(email, password);
       if (result.success) {
+        await new Promise((resolve) => {
+          setTimeout(resolve, 600);
+          setMessage(true);
+          e.target.reset();
+        });
         navigate("/Dashboard");
       }
     } catch (err) {
       setError("an error occurred");
     } finally {
       setLoading(false);
+      setMessage(false);
+      e.target.reset();
     }
   };
 
@@ -51,7 +59,17 @@ dark:text-gray-300"
           <FaArrowLeft size={12} />
           <Link to="/">Back </Link>
         </div>
+
         <AuthLayout>
+          {message && (
+            <div className="success-message flex gap-2">
+              <span className="success-check w-6 h-6 rounded-full bg-[#4caf50] text-white ">
+                ✓
+              </span>
+
+              <p> You have successfully Signed up.</p>
+            </div>
+          )}
           <AuthHeader text="Get Started" />
           {/* <AuthForm2Input label1="First name" label2="Last name" /> */}
           <AuthFormInput

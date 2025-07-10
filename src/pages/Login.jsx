@@ -16,6 +16,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [message, setMessage] = useState(false);
 
   const { session, signInUser } = userAuth();
   console.log(session);
@@ -27,12 +28,20 @@ const Login = () => {
     try {
       const result = await signInUser(email, password);
       if (result.success) {
+        await new Promise((resolve) => {
+          setTimeout(resolve, 600);
+          setMessage(true);
+          e.target.reset();
+        });
+
         navigate("/Dashboard");
       }
     } catch (err) {
       setError("an error occurred");
     } finally {
       setLoading(false);
+      setMessage(false);
+      e.target.reset();
     }
   };
   return (
@@ -47,6 +56,15 @@ const Login = () => {
           <Link to="/">Back </Link>
         </div>
         <AuthLayout>
+          {message && (
+            <div className="success-message flex gap-2">
+              <span className="success-check w-6 h-6 rounded-full bg-[#4caf50] text-white ">
+                ✓
+              </span>
+
+              <p> Welcome back.</p>
+            </div>
+          )}
           <AuthHeader text="Welcome back" />
           <AuthFormInput
             value={email}
