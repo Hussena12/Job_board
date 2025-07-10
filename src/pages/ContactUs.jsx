@@ -37,6 +37,8 @@ const ContactUs = () => {
       alert("failed to send:" + err.text);
     } finally {
       setIsSuccess(false);
+      setIsSubmitting(false);
+      e.target.reset();
     }
   };
 
@@ -53,15 +55,15 @@ const ContactUs = () => {
           <div className="flex flex-col gap-6">
             <p className="py-3 px-4 border-1 border-color dark:border-[#2e2e2e]  rounded-md">
               <span></span>
-              <span>+0123456789</span>
+              <span>+251960257929</span>
             </p>
             <p className="py-3 px-4 border-1 border-color bg-[#1F2937] dark:bg-[#171717] rounded-md text-gray-200 ">
               <span></span>
-              <span>example@email.com</span>
+              <span>getjobjobportal@gmail.com</span>
             </p>
             <p className="py-3 px-4 border-1 border-color dark:border-[#2e2e2e] rounded-md">
               <span></span>
-              <span>775 Rolling Green Rd.</span>
+              <span>775 4k Addis ET.</span>
             </p>
           </div>
           <div className=" flex mb-4 mt-12 justify-center">
