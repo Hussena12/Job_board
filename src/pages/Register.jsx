@@ -52,10 +52,7 @@ const Register = () => {
         onSubmit={handleSignUp}
         className=" relative min-h-screen w-full md:w-[40%]"
       >
-        <div
-          className="md:hidden absolute top-10 left-4 font-medium py-1 bg-light-gray px-2 rounded-2xl flex gap-2 items-center text-[#1F2937]    dark:bg-gray-700
-dark:text-gray-300"
-        >
+        <div className="md:hidden absolute top-10 left-4 font-medium py-1 bg-light-gray px-2 rounded-2xl flex gap-2 items-center text-[#1F2937] dark:bg-gray-700 dark:text-gray-300">
           <FaArrowLeft size={12} />
           <Link to="/">Back </Link>
         </div>

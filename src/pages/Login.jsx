@@ -18,7 +18,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState(false);
 
-  const { session, signInUser } = userAuth();
+  const { session, signInUser, authError } = userAuth();
   console.log(session);
 
   const handleSignIn = async (e) => {
@@ -37,13 +37,14 @@ const Login = () => {
         navigate("/Dashboard");
       }
     } catch (err) {
-      setError("an error occurred");
+      setError(err.message);
     } finally {
       setLoading(false);
       setMessage(false);
       e.target.reset();
     }
   };
+
   return (
     <div className="min-h-screen md:flex">
       <SignImage />
@@ -62,7 +63,7 @@ const Login = () => {
                 ✓
               </span>
 
-              <p> Welcome back.</p>
+              <p> Signed in successfully.</p>
             </div>
           )}
           <AuthHeader text="Welcome back" />
@@ -83,6 +84,9 @@ const Login = () => {
         </div> */}
           <SubmitButton text="Log in" />
           {error && <p className="text-red-600 py-4 text-center">{error}</p>}
+          {authError && (
+            <p className="text-red-600 py-4 text-center">{authError}</p>
+          )}
           <div className="flex flex-col">
             <div className="flex justify-center gap-4 items-center p-6 text-sm text-gray-600">
               <hr className="w-20" />

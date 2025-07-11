@@ -13,6 +13,7 @@ const AuthFormInput = ({ label, placeholder, onChange, value }) => {
           {label}
         </label>
         <input
+          required
           value={value}
           onChange={onChange}
           type={
