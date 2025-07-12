@@ -49,6 +49,13 @@ const MobileNav = () => {
             >
               Contact Us
             </Link>
+            <Link
+              onClick={() => setIsOpen(false)}
+              className="w-full rounded-sm hover:text-gray-700 py-2 hover:bg-gray-100  dark:hover:bg-[#121212] dark:text-gray-200"
+              to="/Dashboard"
+            >
+              Dashboard
+            </Link>
           </div>
 
           <div className="mt-10 flex flex-col gap-4  items-center ">
