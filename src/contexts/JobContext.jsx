@@ -19,13 +19,13 @@ export const JobProvider = ({ children }) => {
     try {
       localStorage.setItem("postedJobs", JSON.stringify(jobs));
     } catch (err) {
-      console.log("Failed to save jobs to localStorage");
+      console.log("Failed to save jobs to localStorage: ", err);
     }
   }, [jobs]);
 
   //function to add new job
   const addJob = (newJob) => {
-    setJobs((prevJobs) => [...prevJobs, { ...newJob, id: Date.now() }]);
+    setJobs((prevJobs) => [...prevJobs, { ...newJob }]);
   };
 
   // value provided to consume

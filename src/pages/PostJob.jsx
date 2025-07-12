@@ -88,7 +88,6 @@ const PostJob = () => {
       dataToSubmit.maxSalary = "";
     }
 
-    console.log(dataToSubmit);
     addJob(dataToSubmit);
 
     setFormData({
@@ -232,14 +231,6 @@ const PostJob = () => {
               onChange={handleChange}
               placeholder="Put your job description here..."
             />
-
-            {/* <PostInput
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              placeholder=" 123 Addis"
-              className=" lg:w-[28rem] w-[21rem] h-[12rem] sm:w-[25rem] "
-            /> */}
           </div>
         </div>
 

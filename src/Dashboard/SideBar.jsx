@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 
 const SideBar = () => {
   return (
-    <div>
-      // Somewhere in your app where appropriate, but not in the navbar
-      <Link to="/MyPostedJob" className="hidden">
-        My Posted Jobs
-      </Link>
+    <div className=" fixed bottom-0 ">
+      <div className="flex text-sm">
+        <Link to="/MyPostedJob" className="">
+          Posted Jobs
+        </Link>
+        <Link className="hover:text-[#3ecf8e]" to="/Jobs">
+          Jobs
+        </Link>
+        <Link className="hover:text-[#3ecf8e] " to="/PostJob">
+          Post
+        </Link>
+      </div>
     </div>
   );
 };
