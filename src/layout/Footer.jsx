@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" relative border-t-1 dark:border-[#2e2e2e] border-color  mx-8 md:mx-12 ml:mx-16  ">
+      <div className=" relative  dark:border-[#2e2e2e] border-color  mx-8 md:mx-12 ml:mx-16  ">
         <div className="pt-8 pb-8 md:pb-24  flex justify-between">
           <p className="text-[0.65rem] text-gray-500 dark:text-neutral-400">
             &copy; GEtjob Inc {currentYear}

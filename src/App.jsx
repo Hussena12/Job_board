@@ -41,7 +41,7 @@ const AppWrapper = () => (
 
 function App() {
   const location = useLocation();
-  const hideNavbarOn = ["/Login", "/Register", "/PostJob"];
+  const hideNavbarOn = ["/Login", "/Register", "/PostJob", "/Dashboard"];
   const shouldHideNavbar = hideNavbarOn.includes(location.pathname);
 
   const { currentMode } = useStateContext();

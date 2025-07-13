@@ -4,7 +4,7 @@ import { FiHome, FiBriefcase, FiPlusCircle, FiList } from "react-icons/fi";
 const SideBar = ({ activePage, setActivePage }) => {
   return (
     <div className=" fixed bottom-0 w-full">
-      <div className="flex gap-10  text-gray-700 bg-white z-50 h-16 justify-center">
+      <div className="flex gap-6  text-gray-600 bg-white z-50 h-16 justify-center">
         <button
           onClick={() => setActivePage("home")}
           className={`flex flex-col justify-center items-center `}
@@ -32,6 +32,13 @@ const SideBar = ({ activePage, setActivePage }) => {
         >
           <FiList className="text-[1.4rem]" />
           <span>My Post</span>
+        </button>
+        <button
+          onClick={() => setActivePage("myPost")}
+          className={`flex flex-col justify-center items-center`}
+        >
+          <img src="/dummy.jpg" alt="user" className="w-6 h-6 rounded-full" />
+          <span> Profile</span>
         </button>
       </div>
     </div>
