@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [activePage, setActivePage] = useState("home");
   return (
     <div className=" flex flex-col h-min-screen">
-      <div className="h-12 flex items-center fixed w-full bg-white z-50 dark:bg-black  px-4 text-2xl justify-between">
+      <div className="h-12 flex items-center fixed w-full bg-white z-50 dark:bg-black  px-4 text-2xl justify-between shadow">
         <div className="flex items-center gap-1">
           <img src="/logo.svg" alt="logo" className="w-8 h-8" />
           <p className="text-[1.25rem]">GetJob</p>

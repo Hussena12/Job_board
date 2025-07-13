@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, SearchBar } from "@/components";
+import { Button, HowItWorks, SearchBar } from "@/components";
 import { Link } from "react-router-dom";
 
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
@@ -132,8 +132,8 @@ text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
               </div>
             ))}
           </div>
-          ;
         </div>
+        <HowItWorks />
         <Footer />
       </div>
     </div>

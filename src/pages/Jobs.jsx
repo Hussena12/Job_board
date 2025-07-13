@@ -1,6 +1,7 @@
 import React from "react";
 import { JobList } from "@/components";
 import { SearchBar } from "../components";
+import { Footer } from "@/layout";
 
 const Jobs = () => {
   return (
@@ -9,6 +10,7 @@ const Jobs = () => {
         <SearchBar />
       </div>
       <JobList />
+      <Footer />
     </div>
   );
 };
