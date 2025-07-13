@@ -17,10 +17,20 @@ const Dashboard = () => {
   const [activePage, setActivePage] = useState("home");
   return (
     <div className=" flex flex-col h-min-screen">
-      <div className="h-12 flex items-center fixed w-full bg-gray-200 z-50  pl-4 text-2xl ">
-        GEtjob
+      <div className="h-12 flex items-center fixed w-full bg-white z-50 dark:bg-black  px-4 text-2xl justify-between">
+        <div className="flex items-center gap-1">
+          <img src="/logo.svg" alt="logo" className="w-8 h-8" />
+          <p className="text-[1.25rem]">GetJob</p>
+        </div>
+
+        <button
+          onClick={() => setActivePage("myPost")}
+          className={`flex flex-col justify-center items-center`}
+        >
+          <img src="/dummy.jpg" alt="user" className="w-8 h-8 rounded-full" />
+        </button>
       </div>
-      <main className=" overflow-y-auto pb-16 pt-12 bg-[#f8f9fa]">
+      <main className="dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#f8f9fa]">
         {pages[activePage]}
       </main>
       <SideBar activePage={activePage} setActivePage={setActivePage} />
