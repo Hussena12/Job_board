@@ -5,7 +5,7 @@ import { FaRegBuilding } from "react-icons/fa";
 const SideBar = ({ activePage, setActivePage }) => {
   return (
     <div className=" fixed bottom-0 w-full ">
-      <div className="flex gap-6  text-gray-600 bg-white z-50 h-18 justify-center text-sm h-16 dark:bg-black dark:text-gray-100">
+      <div className="flex gap-8  text-gray-600 bg-white z-50 h-18 justify-center text-sm h-16 dark:bg-black dark:text-gray-200">
         <button
           onClick={() => setActivePage("home")}
           className={`flex flex-col justify-center items-center `}
