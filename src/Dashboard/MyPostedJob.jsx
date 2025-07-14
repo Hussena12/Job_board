@@ -8,7 +8,7 @@ const MyPostedJob = () => {
   return (
     <div>
       <div className="min-h-screen">
-        <div className="flex mt-10 flex-wrap  gap-6 justify-center">
+        <div className="flex mt-10 flex-wrap  gap-4 justify-center">
           {jobs.map((job) => (
             <PostCard key={job.id} job={job} />
           ))}

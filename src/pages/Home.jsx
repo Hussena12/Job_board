@@ -65,10 +65,10 @@ text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
           <p className="flex justify-center  dark:text-gray-300 text-primary1">
             Apply featured Jobs
           </p>
-          <div className="flex mt-10 flex-wrap gap-4 justify-center ">
+          <div className="flex mt-10 flex-wrap gap-3 justify-center ">
             {jobData.map((item, index) => (
               <div
-                className="dark:bg-[#171717] border shadow-md dark:border-[#2e2e2e]	 dark:text-gray-200 max-w-[21rem] rounded-xl px-6 py-2 justify-center bg-gray-50"
+                className="dark:bg-[#171717] border shadow-md dark:border-[#2e2e2e]	 dark:text-gray-200 max-w-[20rem] rounded-xl px-6 py-2 justify-center bg-gray-50"
                 key={index}
               >
                 <div className="flex justify-between mb-2 mt-2=">

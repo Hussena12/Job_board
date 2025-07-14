@@ -1,47 +1,59 @@
 import React from "react";
-import { FiHome, FiBriefcase, FiPlusCircle, FiList } from "react-icons/fi";
 import { FaRegBuilding } from "react-icons/fa";
+import { FiHome, FiBriefcase, FiPlusCircle, FiList } from "react-icons/fi";
+import { Tooltip } from "react-tooltip";
 
-const SideBar = ({ activePage, setActivePage }) => {
+const SideBar = ({ ActivePage, setActivePage }) => {
   return (
-    <div className=" fixed bottom-0 w-full ">
-      <div className="flex   text-gray-600 bg-white z-50 h-18 justify-between px-6 text-sm h-16 dark:bg-black dark:text-gray-300">
-        <button
-          onClick={() => setActivePage("home")}
-          className={`flex flex-col justify-center items-center `}
-        >
-          <FiHome className="text-[1.4rem]" />
-          <span>Home</span>
-        </button>
-        <button
-          onClick={() => setActivePage("jobs")}
-          className={`flex flex-col justify-center items-center`}
-        >
-          <FiBriefcase className="text-[1.4rem]" />
-          <span>Jobs</span>
-        </button>
-        <button
-          onClick={() => setActivePage("post")}
-          className={`flex flex-col justify-center items-center`}
-        >
-          <FiPlusCircle className="text-[1.4rem]" />
-          <span>Post</span>
-        </button>
-        <button
-          onClick={() => setActivePage("post")}
-          className={`flex flex-col justify-center items-center`}
-        >
-          <FaRegBuilding className="text-[1.4rem]" />
-          <span>Company</span>
-        </button>
-        <button
-          onClick={() => setActivePage("myPost")}
-          className={`flex flex-col justify-center items-center`}
-        >
-          <FiList className="text-[1.4rem]" />
-          <span>My Post</span>
-        </button>
-      </div>
+    <div className="hidden md:fixed md:flex flex-col gap-8 shadow text-gray-600 dark:bg-black dark:text-gray-300  w-12 min-h-full  bg-white pt-24 border-r-1 z-[30] ">
+      <button
+        data-tooltip-id="sidebar-tooltip"
+        data-tooltip-content="Home"
+        onClick={() => setActivePage("home")}
+        className={`flex flex-col justify-center items-center `}
+      >
+        <FiHome className="text-[1rem]" />
+      </button>
+      <button
+        data-tooltip-id="sidebar-tooltip"
+        data-tooltip-content=" Jobs"
+        onClick={() => setActivePage("jobs")}
+        className={`flex flex-col justify-center items-center`}
+      >
+        <FiBriefcase className="text-[1rem]" />
+      </button>
+      <button
+        data-tooltip-id="sidebar-tooltip"
+        data-tooltip-content=" Post"
+        onClick={() => setActivePage("post")}
+        className={`flex flex-col justify-center items-center`}
+      >
+        <FiPlusCircle className="text-[1rem]" />
+      </button>
+      <button
+        data-tooltip-id="sidebar-tooltip"
+        data-tooltip-content="Company"
+        onClick={() => setActivePage("post")}
+        className={`flex flex-col justify-center items-center`}
+      >
+        <FaRegBuilding className="text-[1rem]" />
+      </button>
+      <button
+        data-tooltip-id="sidebar-tooltip"
+        data-tooltip-content="My Post"
+        onClick={() => setActivePage("myPost")}
+        className={`flex flex-col justify-center items-center`}
+      >
+        <FiList className="text-[1rem]" />
+      </button>
+
+      <Tooltip
+        id="sidebar-tooltip"
+        place="right"
+        effect="solid"
+        delayShow={300}
+        className="!text-xs !py-1 !px-2 z-[999] bg-gray-800 dark:bg-gray-600"
+      />
     </div>
   );
 };

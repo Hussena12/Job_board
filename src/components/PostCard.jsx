@@ -16,7 +16,7 @@ const Tags = ({ children }) => {
 const PostCard = ({ job }) => {
   return (
     <div className="flex mt-10 flex-wrap gap-4 justify-center ">
-      <div className="  dark:bg-[#171717]  border shadow-md dark:border-gray-900	 dark:text-gray-200 w-[21rem] rounded-xl px-6 py-2 justify-center bg-gray-50">
+      <div className="  dark:bg-[#171717]  border shadow-md dark:border-gray-900	 dark:text-gray-200 w-[20rem] rounded-xl px-6 py-2 justify-center bg-gray-50">
         <div className="flex justify-between mb-2 mt-2=">
           <img
             className="w-7 h-7 "
@@ -38,7 +38,9 @@ const PostCard = ({ job }) => {
               {job.posted_at || "Recently posted"}
             </span>
           </span>
-          <span className="text-md font-semibold ">{job.jobTitle}</span>
+          <span className="text-md text-gray-800 font-semibold ">
+            {job.jobTitle}
+          </span>
         </p>
 
         <div className="flex gap-4   ">
