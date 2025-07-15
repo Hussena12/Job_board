@@ -1,6 +1,6 @@
 import React from "react";
 import { FiHome, FiBriefcase, FiPlusCircle, FiList } from "react-icons/fi";
-import { FaRegBuilding } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa";
 
 const MobileBar = ({ activePage, setActivePage }) => {
   return (
@@ -32,8 +32,8 @@ const MobileBar = ({ activePage, setActivePage }) => {
             onClick={() => setActivePage("post")}
             className={`flex flex-col justify-center items-center`}
           >
-            <FaRegBuilding className="text-[1.4rem]" />
-            <span>Company</span>
+            <FaRegBookmark className="text-[1.4rem]" />
+            <span>Saved</span>
           </button>
           <button
             onClick={() => setActivePage("myPost")}

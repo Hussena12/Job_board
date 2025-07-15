@@ -1,7 +1,7 @@
 // src/hooks/useCompanySalary.js
 
 import { useState, useEffect } from "react";
-import { fetchCompanySalary } from "../api/companyJobSalary";
+import { fetchCompanySalary } from "@/api/CompanyJobSalary";
 
 export const useCompanySalary = (companyName) => {
   const [data, setData] = useState(null);

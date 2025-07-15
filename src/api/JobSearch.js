@@ -4,7 +4,7 @@ export const fetchJobSearch = async (
   query = "developer in Chicago",
   page = 1
 ) => {
-  const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
+  const apiKey = "94e2e73f44mshfc32a3f708c1108p1f5ed5jsn47f7fe095759";
 
   const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(
     query

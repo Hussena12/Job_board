@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegBuilding } from "react-icons/fa";
+import {  FaRegBookmark } from "react-icons/fa";
 import { FiHome, FiBriefcase, FiPlusCircle, FiList } from "react-icons/fi";
 import { Tooltip } from "react-tooltip";
 
@@ -32,11 +32,11 @@ const SideBar = ({ ActivePage, setActivePage }) => {
       </button>
       <button
         data-tooltip-id="sidebar-tooltip"
-        data-tooltip-content="Company"
+        data-tooltip-content="Saved"
         onClick={() => setActivePage("post")}
         className={`flex flex-col justify-center items-center`}
       >
-        <FaRegBuilding className="text-[1rem]" />
+        <FaRegBookmark className="text-[1rem]" />
       </button>
       <button
         data-tooltip-id="sidebar-tooltip"
