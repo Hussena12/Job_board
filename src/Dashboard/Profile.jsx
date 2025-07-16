@@ -1,8 +1,15 @@
 import React from "react";
 
-const Profile = () => {
+const Profile = ({ isProfile, setIsProfile }) => {
   return (
-    <div className="absolute top-12 right-0 w-24 h-24 bg-white">Profile</div>
+    <div className="  z-[99] flex flex-col  items-end">
+      <button
+        onClick={() => setIsProfile(!isProfile)}
+        className={`flex flex-col justify-center  items-center z-[9999]`}
+      >
+        <img src="/dummy.jpg" alt="user" className="w-8 h-8 rounded-full" />
+      </button>
+    </div>
   );
 };
 
