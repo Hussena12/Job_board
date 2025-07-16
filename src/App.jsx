@@ -63,7 +63,14 @@ function App() {
             <Route path="/Register" element={<Register />} />
 
             {/* dashboard */}
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route
+              path="/Dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
             <Route path="/MyPostedJob" element={<MyPostedJob />} />
 
             <Route path="/JobDetails" element={<JobDetails />} />
