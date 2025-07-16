@@ -25,16 +25,19 @@ const Dashboard = () => {
           <p className="text-[1.25rem]">GetJob</p>
         </div>
 
-        <Profile isProfile={isProfile} setIsProfile={setIsProfile} />
+        <button
+          onClick={() => setIsProfile(!isProfile)}
+          className={`flex flex-col justify-center  items-center z-[9999]`}
+        >
+          <img src="/dummy.jpg" alt="user" className="w-8 h-8 rounded-full" />
+        </button>
       </div>
 
       <div className="flex">
         <SideBar activePage={activePage} setActivePage={setActivePage} />
         <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#f8f9fa] md:pl-12">
           {pages[activePage]}
-          {isProfile && (
-            <div className="absolute top-0 right-0 flex-1 pt-12 w-36 min-h-screen bg-white "></div>
-          )}
+          {isProfile && <Profile />}
         </main>
       </div>
 
