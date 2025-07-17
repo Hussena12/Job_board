@@ -3,6 +3,11 @@ const jobContext = createContext();
 
 export const JobProvider = ({ children }) => {
   // local storage to persost  jobs
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  console.log(firstName, lastName);
+
   const [jobs, setJobs] = useState(() => {
     const storedJobs = localStorage.getItem("postedJobs");
 
@@ -35,7 +40,17 @@ export const JobProvider = ({ children }) => {
   };
 
   return (
-    <jobContext.Provider value={contextValue}>{children}</jobContext.Provider>
+    <jobContext.Provider
+      value={{
+        ...contextValue,
+        setFirstName,
+        setLastName,
+        firstName,
+        lastName,
+      }}
+    >
+      {children}
+    </jobContext.Provider>
   );
 };
 

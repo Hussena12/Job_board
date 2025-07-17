@@ -68,7 +68,7 @@ const Register = () => {
             </div>
           )}
           <AuthHeader text="Get Started" />
-          {/* <AuthForm2Input label1="First name" label2="Last name" /> */}
+          <AuthForm2Input label1="First name" label2="Last name" />
           <AuthFormInput
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your.name@example.com"
