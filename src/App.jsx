@@ -56,7 +56,14 @@ function App() {
             {/* pages */}
             <Route path="/" element={<Home />} />
             <Route path="/Jobs" element={<Jobs />} />
-            <Route path="/PostJob" element={<PostJob />} />
+            <Route
+              path="/PostJob"
+              element={
+                <PrivateRoute>
+                  <PostJob />
+                </PrivateRoute>
+              }
+            />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/Login" element={<Login />} />

@@ -49,7 +49,7 @@ const PostCard = ({ job }) => {
         </div>
 
         <div className="mt-4  text-xs">
-          <p className="mb-2">{job.description}</p>
+          <p className="mb-2 overflow-wrap break-words">{job.description}</p>
           <Link className="underline">See Details...</Link>
         </div>
         <hr className="border-t border-gray-300 mb-2" />

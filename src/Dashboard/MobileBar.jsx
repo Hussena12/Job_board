@@ -29,7 +29,7 @@ const MobileBar = ({ activePage, setActivePage }) => {
             <span>Post</span>
           </button>
           <button
-            onClick={() => setActivePage("post")}
+            onClick={() => setActivePage("saved")}
             className={`flex flex-col justify-center items-center`}
           >
             <FaRegBookmark className="text-[1.4rem]" />

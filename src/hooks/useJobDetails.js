@@ -23,3 +23,5 @@ export const useJobDetails = (jobId) => {
 
   return { details, loading, error };
 };
+
+export function useLocalStorage(initial, key) {}

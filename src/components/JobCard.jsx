@@ -42,7 +42,6 @@ const JobCard = ({ job }) => {
         <p className="flex flex-col  justify-center">
           <span className="flex gap-2  ">
             <span className=" text-sm text-gray-700 font-semibold  dark:text-gray-300">
-              {" "}
               {Employer || "Unknown Company"}
             </span>
             <span className="text-xs font-semibold text-gray-600	dark:text-gray-400">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MyPostedJob from "./MyPostedJob";
 import { Home } from "../pages";
 import { Jobs, PostJob } from "@/pages";
-import { MobileBar, Profile, SideBar } from ".";
+import { MobileBar, Profile, SavedPage, SideBar } from ".";
 
 // import { SignOut } from "@/components";
 
@@ -11,6 +11,7 @@ const pages = {
   jobs: <Jobs />,
   post: <PostJob />,
   myPost: <MyPostedJob />,
+  // saved: <SavedPage />,
 };
 
 const Dashboard = () => {
@@ -35,7 +36,7 @@ const Dashboard = () => {
 
       <div className="flex">
         <SideBar activePage={activePage} setActivePage={setActivePage} />
-        <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#f8f9fa] md:pl-12">
+        <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#fafafa] md:pl-12">
           {pages[activePage]}
           {isProfile && <Profile />}
         </main>
