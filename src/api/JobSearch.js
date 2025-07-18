@@ -1,5 +1,3 @@
-// src/api/jobSearch.js
-
 export const fetchJobSearch = async (
   query = "developer in Chicago",
   page = 1
@@ -18,7 +16,23 @@ export const fetchJobSearch = async (
     },
   };
 
-  const res = await fetch(url, options);
-  if (!res.ok) throw new Error("Failed to fetch jobs");
-  return res.json(); // returns full JSON (status, request_id, data[])
+  try {
+    const res = await fetch(url, options);
+
+    // 2. Handle 403/429 errors explicitly
+    if (res.status === 403) {
+      throw new Error("Invalid API key (403 Forbidden)");
+    }
+    if (res.status === 429) {
+      throw new Error("Too many requests (429) - try again later");
+    }
+    if (!res.ok) {
+      throw new Error(`Failed to fetch jobs (status: ${res.status})`);
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("API Error:", error.message);
+    throw error; // Re-throw to let the caller handle it
+  }
 };

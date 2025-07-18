@@ -1,10 +1,8 @@
-import React, { Children } from "react";
+import React from "react";
 
-import { Button } from "@/components";
 import { Link } from "react-router-dom";
 
-import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
-import { useJobs } from "@/hooks/useJobs";
+import { BsBookmark } from "react-icons/bs";
 import { ApplyButton } from "@/components";
 
 const Tags = ({ children }) => {
