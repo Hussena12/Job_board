@@ -1,15 +1,3 @@
-// import { registerLicense } from "@syncfusion/ej2-base";
-
-// // Replace with your actual license key
-// registerLicense(
-//   "Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXheeHVRRWVeUUxwXUtWYEk="
-// );
-
-// import * as ej2base from "@syncfusion/ej2-base";
-// ej2base.registerLicense(
-//   " Mzk0MjIwOEAzMTM5MmUzNDJlMzBBMm5oQjRuUVRMUlJjY00wYWZmWVozeExUT3J3cUg4SHBXc1diZGNWN0JrPQ== "
-// );
-
 import "./App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
@@ -30,14 +18,7 @@ import { Navbar } from "./layout";
 import { useStateContext } from "./contexts/useStateContext";
 import { PrivateRoute } from "./components";
 import { JobProvider } from "./contexts/JobContext";
-
-const AppWrapper = () => (
-  <JobProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </JobProvider>
-);
+import { SavedjobsProvider } from "./contexts/useSavedJobs";
 
 function App() {
   const location = useLocation();
@@ -88,5 +69,15 @@ function App() {
     </div>
   );
 }
+
+const AppWrapper = () => (
+  <JobProvider>
+    <SavedjobsProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </SavedjobsProvider>
+  </JobProvider>
+);
 
 export default AppWrapper;

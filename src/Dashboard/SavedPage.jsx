@@ -1,30 +1,18 @@
 import { PostCard } from "@/components";
-import React, { useState } from "react";
+import { useSavedJobs } from "@/contexts/useSavedProvider";
 
 const SavedPage = () => {
-  const [savedJobs, setSavedJobs] = useState(() => {
-    const savedJob = localStorage.getItem.parse("saved");
-    return savedJob;
-  });
-
-  const toggleSaveJob = (job) => {
-    setSavedJobs((prev) =>
-      prev.some((j) => j.id === job.id)
-        ? prev.filter((j) => j.id !== job.id)
-        : [...prev, job]
-    );
-  };
-
-  useEffect(() => {
-    localStorage.setItem.stringify("saved", savedJobs);
-  }, [savedJobs]);
-
+  const { savedJobs } = useSavedJobs();
+  console.log(savedJobs);
   return (
     <div>
-      <h2>Saved Jobs ({savedJobs.length})</h2>
-      {savedJobs.map((job) => (
-        <PostCard job={job} key={job.id} />
-      ))}
+      <div className="min-h-screen">
+        <div className="flex mt-10 flex-wrap  gap-4 justify-center">
+          {savedJobs.map((job) => (
+            <PostCard job={job} key={job.id} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const pages = {
   jobs: <Jobs />,
   post: <PostJob />,
   myPost: <MyPostedJob />,
-  // saved: <SavedPage />,
+  saved: <SavedPage />,
 };
 
 const Dashboard = () => {

@@ -2,6 +2,7 @@ import React from "react";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Button } from "@/components";
+import { useSavedJobs } from "@/contexts/useSavedProvider";
 
 const Tags = ({ children }) => {
   return (
@@ -14,6 +15,8 @@ const Tags = ({ children }) => {
 };
 
 const PostCard = ({ job }) => {
+  const { handleSaveJob, savedJobs } = useSavedJobs();
+  const isSaved = savedJobs.some((savedJobs) => savedJobs.id === job.id);
   return (
     <div className="flex mt-10 flex-wrap gap-4 justify-center ">
       <div className="  dark:bg-[#171717]  border shadow-md dark:border-gray-900	 dark:text-gray-200 w-[20rem] rounded-xl px-6 py-2 justify-center bg-gray-50">
@@ -24,9 +27,12 @@ const PostCard = ({ job }) => {
             alt="Logo"
           />
 
-          <p className="flex gap-1 items-center border-2 text-sm px-2 rounded-sm hover:bg-gray-100  dark:hover:bg-gray-900 cursor-pointer">
+          <p
+            className="flex gap-1 items-center border-2 text-sm px-2 rounded-sm hover:bg-gray-100  dark:hover:bg-gray-900 cursor-pointer"
+            onClick={() => handleSaveJob(job)}
+          >
             <span>Save</span>
-            <BsBookmark size={12} />
+            {isSaved ? <BsBookmarkFill size={12} /> : <BsBookmark size={12} />}
           </p>
         </div>
         <p className="flex flex-col  justify-center">
@@ -38,9 +44,7 @@ const PostCard = ({ job }) => {
               {job.posted_at || "Recently posted"}
             </span>
           </span>
-          <span className="text-md text-gray-800 font-semibold ">
-            {job.jobTitle}
-          </span>
+          <span className="text-lg  font-semibold ">{job.jobTitle}</span>
         </p>
 
         <div className="flex gap-4   ">
