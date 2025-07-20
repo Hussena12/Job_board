@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import MyPostedJob from "./MyPostedJob";
+import { MyPostedJob } from ".";
 import { Home } from "../pages";
 import { Jobs, PostJob } from "@/pages";
-import { MobileBar, Profile, SavedPage, SideBar } from ".";
+import { MobileBar, Profile, SideBar } from ".";
+import SavedPage from "./SavedPage";
 
 // import { SignOut } from "@/components";
 
 const pages = {
+  saved: <SavedPage />,
   home: <Home />,
   jobs: <Jobs />,
   post: <PostJob />,
   myPost: <MyPostedJob />,
-  saved: <SavedPage />,
 };
 
 const Dashboard = () => {
