@@ -1,4 +1,4 @@
-import { useContext } from "react";
-import { SavedJobsContext } from "./useSavedJobs";
+import { useContext, createContext } from "react";
+export const SavedJobsContext = createContext();
 
 export const useSavedJobs = () => useContext(SavedJobsContext);

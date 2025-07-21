@@ -1,4 +1,5 @@
-import { useContext } from "react";
-import { stateContext } from "./ContextProvider";
+import { useContext , createContext} from "react";
+export const stateContext = createContext();
+
 
 export const useStateContext = () => useContext(stateContext);

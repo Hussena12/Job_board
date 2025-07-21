@@ -1,6 +1,5 @@
-import react, { createContext, useState, useEffect } from "react";
-
-export const SavedJobsContext = createContext();
+import react, { useState, useEffect } from "react";
+import { SavedJobsContext } from "./useSavedProvider";
 
 export const SavedjobsProvider = ({ children }) => {
   const [savedJobs, setSavedJobs] = useState(() => {

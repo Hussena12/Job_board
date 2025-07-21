@@ -1,6 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
-
-export const stateContext = createContext();
+import { useState, useEffect } from "react";
+import { stateContext } from "./useStateContext";
 
 export const ContextProvider = ({ children }) => {
   const [currentMode, setCurrentMode] = useState(() => {
