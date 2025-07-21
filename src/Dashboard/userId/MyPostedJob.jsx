@@ -1,5 +1,5 @@
 import React from "react";
-import { useJobs } from "../contexts/JobContext";
+import { useJobs } from "../../contexts/JobContext";
 import { PostCard } from "@/components";
 import { Footer } from "@/layout";
 

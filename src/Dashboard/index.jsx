@@ -1,5 +1,5 @@
-export { default as MyPostedJob } from "./MyPostedJob";
-export { default as MobileBar } from "./MobileBar";
-export { default as Dashboard } from "./Dashboard";
-export { default as SideBar } from "./SideBar";
-export { default as Profile } from "./Profile";
+export { default as MyPostedJob } from "./userId/MyPostedJob";
+export { default as MobileBar } from "./userId/MobileBar";
+export { default as Dashboard } from "./userId/Dashboard";
+export { default as SideBar } from "./userId/SideBar";
+export { default as Profile } from "./userId/Profile";

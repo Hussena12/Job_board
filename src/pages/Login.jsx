@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import {
   AuthFormInput,
   AuthHeader,
@@ -10,37 +10,60 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { SignImage } from "@/components";
 import { userAuth } from "@/contexts/AuthContextProvider";
 
+const initialState = {
+  email: "",
+  password: "",
+  loading: false,
+  error: "",
+  message: false,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "START":
+      return { ...state, loading: true };
+    case "SUCCESS":
+      return { ...state, message: true };
+    case "ERROR":
+      return { ...state, error: action.error };
+    case "FINALLY":
+      return { ...state, loading: false, message: false };
+    case "EMAIL":
+      return { ...state, email: action.email };
+    case "PASSWORD":
+      return { ...state, password: action.password };
+    default:
+      throw new Error("problem in dispatch");
+  }
+};
+
 const Login = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState(false);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { email, message, error, password } = state;
 
   const { session, signInUser, authError } = userAuth();
   console.log(session);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
+    dispatch({ type: "START" });
     try {
       const result = await signInUser(email, password);
       if (result.success) {
         await new Promise((resolve) => {
           setTimeout(resolve, 600);
-          setMessage(true);
+          dispatch({ type: "SUCCESS" });
           e.target.reset();
         });
 
         navigate("/Dashboard");
       }
     } catch (err) {
-      setError(err.message);
+      dispatch({ type: "ERROR ", error: err.message });
     } finally {
-      setLoading(false);
-      setMessage(false);
+      dispatch({ type: "FINALLY" });
       e.target.reset();
     }
   };
@@ -69,13 +92,15 @@ const Login = () => {
           <AuthHeader text="Welcome back" />
           <AuthFormInput
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => dispatch({ type: "EMAIL", email: e.target.value })}
             placeholder="your.name@example.com "
             label="Email or Username "
           />
           <AuthFormInput
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) =>
+              dispatch({ type: "PASSWORD", password: e.target.value })
+            }
             placeholder="Enter your password"
             label="Password"
           />
