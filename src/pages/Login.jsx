@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { SignImage } from "@/components";
 import { userAuth } from "@/contexts/AuthContextProvider";
+import { supabase } from "@/supabaseClient";
 
 const initialState = {
   email: "",
@@ -38,6 +39,12 @@ const reducer = (state, action) => {
 };
 
 const Login = () => {
+  const signInWithGoogle = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+  };
+
   const navigate = useNavigate();
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -119,7 +126,10 @@ const Login = () => {
               <hr className="w-20" />
             </div>
 
-            <p className="flex  gap-3 items-center justify-center text-sm  ">
+            <p
+              className="flex  gap-3 items-center justify-center text-sm "
+              onClick={signInWithGoogle}
+            >
               <img
                 className=" md:w-5 ml:w-6 w-6"
                 src="https://logo.clearbit.com/google.com"
