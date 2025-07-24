@@ -1,12 +1,14 @@
-import { createContext, useEffect, useState, useContext } from "react";
+import {  useEffect, useState } from "react";
 import { supabase } from "@/supabaseClient";
 import { AuthContext } from "./AuthContextProvider";
 
 export const AuthContextProvider = ({ children }) => {
   const [session, setSession] = useState(undefined);
   const [authError, setAuthError] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   // Sign up
+  console.log(userId);
 
   const signUpNewUser = async (email, password) => {
     try {
@@ -88,10 +90,12 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
+      if (session) setUserId(session.user.id);
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
+      if (session) setUserId(session.user.id);
     });
   }, []);
 
@@ -106,7 +110,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ session, signUpNewUser, signOut, signInUser, authError }}
+      value={{ session, signUpNewUser, signOut, signInUser, authError, userId }}
     >
       {children}
     </AuthContext.Provider>
