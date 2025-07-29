@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t-[0.0625rem] max-w-[76rem] dark:border-[#2e2e2e] border-color  mx-8 md:mx-12 ml:mx-16  ">
+      <div className=" relative border-t-[0.0625rem] max-w-[76rem] dark:border-[#2e2e2e] border-color  mx-8 md:mx-12 ml:mx-16  ">
         <div className=" pt-8 pb-8 md:pb-24  flex justify-between">
           <p className="text-[0.65rem] text-gray-500 dark:text-neutral-400">
             &copy; GetJob Inc {currentYear}

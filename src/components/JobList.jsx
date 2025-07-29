@@ -14,7 +14,7 @@ const JobList = () => {
           Loading jobs...
         </p>
       )}
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500 text-center">{error}</p>}
 
       <div className="flex mt-10 flex-wrap gap-6 justify-center">
         {jobs.map((job) => (
@@ -23,12 +23,20 @@ const JobList = () => {
       </div>
 
       <div className="text-center mt-10">
-        {!loading && (
+        {!loading && !error && (
           <button
             onClick={() => setPage((prev) => prev + 1)}
             className="px-6 py-2 bg-[#1F2937]  text-white rounded"
           >
             Load More
+          </button>
+        )}
+        {error && (
+          <button
+            onClick={() => setPage((prev) => prev + 1)}
+            className="px-6 py-2 bg-[#1F2937]  text-white rounded"
+          >
+            Try again
           </button>
         )}
       </div>
