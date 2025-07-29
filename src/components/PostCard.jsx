@@ -19,10 +19,10 @@ const PostCard = ({ job }) => {
   const isSaved = savedJobs.some((savedJobs) => savedJobs.id === job.id);
   return (
     <div className="flex mt-10 flex-wrap gap-4 justify-center ">
-      <div className="  dark:bg-[#171717]  border shadow-md dark:border-gray-900	 dark:text-gray-200 w-[20rem] rounded-xl px-6 py-2 justify-center bg-gray-50">
+      <div className=" dark:bg-[#171717] border shadow-md dark:border-[#2e2e2e]	 dark:text-gray-200 max-w-[20rem] rounded-xl px-6 py-2 justify-center bg-gray-50">
         <div className="flex justify-between mb-2 mt-2=">
           <img
-            className="w-7 h-7 "
+            className="w-8 h-8 "
             src={job.employer_logo || "https://logo.clearbit.com/google.com"}
             alt="Logo"
           />
@@ -37,14 +37,14 @@ const PostCard = ({ job }) => {
         </div>
         <p className="flex flex-col  justify-center">
           <span className="flex gap-2  ">
-            <span className=" text-sm text-gray-700 font-semibold  dark:text-gray-300">
+            <span className=" text-sm text-gray-700 font-semibold  dark:text-gray-200">
               {job.company || "Unknown Company"}
             </span>
-            <span className="text-xs font-semibold text-gray-600	dark:text-gray-400">
+            <span className="text-xs font-semibold text-gray-600	dark:text-gray-300">
               {job.posted_at || "Recently posted"}
             </span>
           </span>
-          <span className="text-lg  font-semibold ">{job.jobTitle}</span>
+          <span className="text-lg  font-semibold pt-1 ">{job.jobTitle}</span>
         </p>
 
         <div className="flex gap-4   ">
@@ -60,7 +60,7 @@ const PostCard = ({ job }) => {
 
         <div className="flex  justify-between">
           <div>
-            <p className=" text-sm font-medium text-green-600">
+            <p className=" text-base font-medium text-green-600">
               {job.isNegotiable ? (
                 "Negotiable"
               ) : (
@@ -69,7 +69,7 @@ const PostCard = ({ job }) => {
                 </span>
               )}
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-gray-500 dark:text-gray-300">
               {job.city}, {job.countryIso}
             </p>
           </div>
