@@ -7,12 +7,13 @@ import {
   SubmitButton,
 } from "@/components/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { SignAddition, SignImage } from "@/components";
 import { userAuth } from "@/contexts/AuthContextProvider";
 
 const initialState = {
   email: "",
+  fullName: "",
   password: "",
   loading: false,
   error: "",
@@ -31,6 +32,8 @@ const reducer = (state, action) => {
       return { ...state, loading: false, message: false };
     case "EMAIL":
       return { ...state, email: action.email };
+    case "FULLNAME":
+      return { ...state, fullName: action.fullName };
     case "PASSWORD":
       return { ...state, password: action.password };
     default:
@@ -42,27 +45,38 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { email, message, error, password } = state;
+  const { email, fullName, message, error, password } = state;
+  console.log(email, fullName, message, error, password);
 
-  const { session, signUpNewUser } = userAuth();
+  const { session, signUpNewUser, createUserProfile } = userAuth();
   console.log(session);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     dispatch({ type: "START" });
     try {
-      const result = await signUpNewUser(email, password);
-      if (result.success) {
+      //  sign up user
+      const { data, error } = await signUpNewUser(email, password);
+
+      if (data) {
         await new Promise((resolve) => {
           setTimeout(resolve, 600);
           dispatch({ type: "SUCCESS" });
 
           e.target.reset();
         });
+        if (error) throw new Error("Signup failed");
+
+        // create profile in supabase
+        const { user } = data;
+        await createUserProfile(user.id, fullName, email);
+
+        // redirect to dashboard
         navigate("/Dashboard");
+        console.log(data.user.id);
       }
     } catch (err) {
-      dispatch({ type: "ERROR ", error: err.message });
+      dispatch({ type: "ERROR", error: err.message });
     } finally {
       dispatch({ type: "FINALLY" });
 
@@ -93,7 +107,14 @@ const Register = () => {
             </div>
           )}
           <AuthHeader text="Get Started" />
-          <AuthForm2Input label1="First name" label2="Last name" />
+
+          <AuthFormInput
+            onChange={(e) =>
+              dispatch({ type: "FULLNAME", fullName: e.target.value })
+            }
+            placeholder="Hussein Ali"
+            label="Full name"
+          />
           <AuthFormInput
             onChange={(e) => dispatch({ type: "EMAIL", email: e.target.value })}
             placeholder="your.name@example.com"

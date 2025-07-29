@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/supabaseClient";
 import { AuthContext } from "./AuthContextProvider";
 
@@ -7,12 +7,38 @@ export const AuthContextProvider = ({ children }) => {
   const [authError, setAuthError] = useState(null);
   const [userId, setUserId] = useState(null);
 
+  const createUserProfile = async (userId, fullName = "", email) => {
+    const username = email.split("@")[0];
+
+    const { data, error } = await supabase
+      .from("profiles")
+      .insert([
+        {
+          id: userId,
+          full_name: fullName,
+          username: username,
+        },
+      ])
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") {
+        // 23505 = unique violation
+        console.log("Profile already exists, skipping insert");
+        return null;
+      }
+      throw error;
+    }
+    return data;
+  };
+
   // Sign up
   console.log(userId);
 
   const signUpNewUser = async (email, password) => {
     try {
-      const { data, error } = supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email: email,
         password: password,
       });
@@ -110,7 +136,15 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ session, signUpNewUser, signOut, signInUser, authError, userId }}
+      value={{
+        session,
+        signUpNewUser,
+        signOut,
+        signInUser,
+        authError,
+        userId,
+        createUserProfile,
+      }}
     >
       {children}
     </AuthContext.Provider>

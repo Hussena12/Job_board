@@ -14,7 +14,7 @@ export const JobProvider = ({ children }) => {
     try {
       return storedJobs ? JSON.parse(storedJobs) : [];
     } catch (err) {
-      console.error("Failed to parse stored jobs from localStorage");
+      console.error("Failed to parse stored jobs from localStorage", err);
       return [];
     }
   });
