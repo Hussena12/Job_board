@@ -8,7 +8,7 @@ const Navbar = () => {
   const { isOpen, setIsOpen } = useStateContext();
   return (
     <div className=" flex justify-center">
-      <header className=" bg-white shadow p-3  px-2 w-[86rem] dark:bg-[#000]  dark:backdrop-blur-m dark:text-white md:mt-4 md:rounded-[2rem]  z-50 ">
+      <header className=" bg-white shadow p-3  px-2 w-[80rem] md:max-w-[80rem] dark:bg-[#000]  dark:backdrop-blur-m dark:text-white md:mt-4 md:rounded-[2rem]  z-50 ">
         <div className="   flex  gap-24 md:mx-6 mx-4 justify-between ">
           <div className="flex items-center gap-1">
             <img src="/logo.svg" alt="logo" className="w-8 h-8" />
@@ -33,9 +33,9 @@ const Navbar = () => {
               <Link className="hover:text-[#3ecf8e]" to="/ContactUs">
                 Contact Us
               </Link>
-              <Link className="hover:text-[#3ecf8e]" to="/Dashboard">
+              {/* <Link className="hover:text-[#3ecf8e]" to="/Dashboard">
                 Dashboard
-              </Link>
+              </Link> */}
             </div>
 
             <div className="flex-1 flex justify-end items-center">

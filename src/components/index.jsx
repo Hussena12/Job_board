@@ -26,3 +26,4 @@ export { default as SelectEmployment } from "./SelectEmployment";
 export { default as SuccessContact } from "./SuccessContact";
 export { default as SignOut } from "./SignOut";
 export { default as HowItWorks } from "./HowItWorks";
+export { default as FeaturedJob } from "./FeaturedJob";
