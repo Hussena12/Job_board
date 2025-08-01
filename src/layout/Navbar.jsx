@@ -10,10 +10,10 @@ const Navbar = () => {
     <div className=" flex justify-center">
       <header className=" bg-white shadow p-3  px-2 w-[80rem] md:max-w-[80rem] dark:bg-[#000]  dark:backdrop-blur-m dark:text-white md:mt-4 md:rounded-[2rem]  z-50 ">
         <div className="   flex  gap-24 md:mx-6 mx-4 justify-between ">
-          <div className="flex items-center gap-1">
+          <Link to="/" className="flex items-center gap-1">
             <img src="/logo.svg" alt="logo" className="w-8 h-8" />
             <p className="text-[1.25rem]">GetJob</p>
-          </div>
+          </Link>
 
           <nav className="hidden md:flex w-full  items-center   lg:pl-36 md:pl-18 md:text-sm ml:text-md">
             <div className="flex  justify-center items-center space-x-6 ">

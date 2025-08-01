@@ -37,7 +37,7 @@ const jobData = [
 
 const FeaturedJob = () => {
   return (
-    <div className="flex mt-10 flex-wrap gap-3 justify-center ">
+    <div className="flex mt-10 flex-wrap gap-3 justify-center z-30 ">
       {jobData.map((item, index) => (
         <div
           className=" dark:bg-[#171717] border shadow-md dark:border-[#2e2e2e]	 dark:text-gray-200 max-w-[20rem] rounded-xl px-6 py-2 justify-center bg-gray-50"

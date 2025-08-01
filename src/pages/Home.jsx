@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="  w-full">
       <div className=" flex flex-col items-center w-full h-full z-0">
-        <div className="flex flex-col items-center  z-20 container mx-auto px-4 pt-14 text-white font-poppins">
+        <div className="flex flex-col items-center   container mx-auto px-4 pt-14 text-white font-poppins">
           <p
             className="text-5xl sm:text-6xl md:text-[4.125rem]  dark:text-[#3ecf8e]
 text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
@@ -28,7 +28,7 @@ text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
           <SearchBar />
         </div>
 
-        <div className=" mt-5 z-10 ">
+        <div className=" mt-5  ">
           <p className="flex justify-center  dark:text-gray-300 text-primary1">
             Apply featured Jobs
           </p>
