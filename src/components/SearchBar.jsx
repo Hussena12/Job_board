@@ -24,8 +24,8 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <div className="flex gap-4 px-2 py-2 items-center">
-      <div className="relative ">
+    <div className="flex gap-4 px-2   py-2 items-center">
+      <div className="relative  ">
         {searchTerm.length === 0 && (
           <FiSearch className="absolute top-3 left-3 text-gray-500 " />
         )}
@@ -34,7 +34,7 @@ const SearchBar = () => {
           ref={search}
           type="search"
           value={searchTerm}
-          className="border-none py-2 px-3 rounded-sm  w-[16rem] sm:w-[20rem] md:w-[30rem] shadow text-gray-800  dark:bg-[#171717] dark:border-gray-600 dark:text-gray-300"
+          className="border-none py-2 px-3 rounded-sm  w-[14rem] sm:w-[18rem] md:w-[28rem] shadow text-gray-800  dark:bg-[#171717] dark:border-gray-600 dark:text-gray-300"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>

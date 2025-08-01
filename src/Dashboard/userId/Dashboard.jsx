@@ -43,21 +43,17 @@ const Dashboard = () => {
 
   return (
     <>
-      {profile ? (
-        <div className="  flex flex-col h-min-screen">
-          <DashNavbar isProfile={isProfile} setIsProfile={setIsProfile} />
-          <div className="flex">
-            <SideBar activePage={activePage} setActivePage={setActivePage} />
-            <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#fafafa] md:pl-12">
-              {pages[activePage]}
-              {isProfile && <Profile />}
-            </main>
-          </div>
-          <MobileBar activePage={activePage} setActivePage={setActivePage} />{" "}
+      <div className="  flex flex-col h-min-screen">
+        <DashNavbar isProfile={isProfile} setIsProfile={setIsProfile} />
+        <div className="flex">
+          <SideBar activePage={activePage} setActivePage={setActivePage} />
+          <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#fafafa] md:pl-12">
+            {pages[activePage]}
+            {isProfile && <Profile />}
+          </main>
         </div>
-      ) : (
-        <p>Loading profile...</p>
-      )}
+        <MobileBar activePage={activePage} setActivePage={setActivePage} />{" "}
+      </div>
     </>
   );
 };
