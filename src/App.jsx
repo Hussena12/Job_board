@@ -54,9 +54,9 @@ function App() {
             <Route
               path="/Dashboard"
               element={
-                // <PrivateRoute>
-                <Dashboard />
-                // </PrivateRoute>
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
               }
             />
             <Route path="/MyPostedJob" element={<MyPostedJob />} />
