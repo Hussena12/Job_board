@@ -6,7 +6,7 @@ import { Footer } from "@/layout";
 
 const Home = () => {
   return (
-    <div className="  w-full">
+    <div className="  w-full pt-12">
       <div className=" flex flex-col items-center w-full h-full z-0">
         <div className="flex flex-col items-center   container mx-auto px-4 pt-14 text-white font-poppins">
           <p

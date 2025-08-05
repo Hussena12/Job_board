@@ -7,7 +7,7 @@ import { useStateContext } from "../contexts/useStateContext";
 const Navbar = () => {
   const { isOpen, setIsOpen } = useStateContext();
   return (
-    <div className=" flex justify-center">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center  pb-16">
       <header className=" bg-white shadow p-3  px-2 w-[80rem] md:max-w-[80rem] dark:bg-[#000]  dark:backdrop-blur-m dark:text-white md:mt-4 md:rounded-[2rem]  z-50 ">
         <div className="   flex  gap-24 md:mx-6 mx-4 justify-between ">
           <Link to="/" className="flex items-center gap-1">
