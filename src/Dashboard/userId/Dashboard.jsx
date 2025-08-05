@@ -47,7 +47,7 @@ const Dashboard = () => {
         <DashNavbar isProfile={isProfile} setIsProfile={setIsProfile} />
         <div className="flex">
           <SideBar activePage={activePage} setActivePage={setActivePage} />
-          <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16 pt-12 bg-[#fafafa] md:pl-12">
+          <main className=" relative flex-1 dark:bg-[#121212] overflow-y-auto pb-16  bg-[#fafafa] md:pl-12">
             {pages[activePage]}
             {isProfile && <Profile />}
           </main>

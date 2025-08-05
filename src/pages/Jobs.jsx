@@ -5,7 +5,7 @@ import { Footer } from "@/layout";
 
 const Jobs = () => {
   return (
-    <div className="  ">
+    <div className=" pt-12 ">
       <div className="flex justify-center m-6">
         <SearchBar />
       </div>

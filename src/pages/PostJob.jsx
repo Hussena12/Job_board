@@ -113,7 +113,7 @@ const PostJob = () => {
   return (
     <>
       {!isClose && (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="pt-12">
           <div className="  z-30 flex px-5 md:pr-9 bg-white dark:bg-[#111111] justify-between py-2 border-b-1">
             <div className="flex items-center">
               <Link to="/MyPostedJob">
