@@ -43,7 +43,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex flex-wrap m-6 justify-center gap-6 p-6 lg:border-y-1 rounded-md dark:text-gray-50 ">
+    <div className="flex flex-wrap  justify-center gap-6 p-6 lg:border-y-1 rounded-md dark:text-gray-50 pt-24">
       <div className="flex-1 flex justify-center ml:w-[50%]  ">
         <div className="py-4  max-w-[30rem]   ">
           <p className="text-3xl font-semibold mb-1 dark:text-[#fff]">

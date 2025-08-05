@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
-      <div className="bg-[#fcfcfc] dark:bg-[#121212] min-h-screen">
+      <div className="bg-[#f7f7f7] dark:bg-[#121212] min-h-screen">
         {!shouldHideNavbar && <Navbar />}
 
         <div className={!shouldHideNavbar ? "" : ""}>

@@ -25,7 +25,7 @@ const jobsData = [
 const AboutUs = () => {
   const [item, setItem] = useState(0);
   return (
-    <div className="mt-28 ">
+    <div className="pt-28 ">
       <div className="flex flex-col items-center mx-9 mb-40 text-[#032b2f] dark:text-gray-200 ">
         <p className="text-xl sm:text-2xl mb-2">Our mission:</p>
         <p className="lg:text-6xl md:text-5xl text-2xl sm:text-4xl mt-6 font-inter ">
