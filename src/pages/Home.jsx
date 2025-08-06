@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FeaturedJob, HowItWorks, SearchBar } from "@/components";
+import { PiSparkleFill } from "react-icons/pi";
 
 import { Footer } from "@/layout";
 
@@ -28,10 +29,13 @@ text-gray-900 mx-4 ml:mx-10 sm:mx-6 md:mx-8"
           <SearchBar />
         </div>
 
-        <div className=" mt-5  ">
-          <p className="flex justify-center  dark:text-gray-300 text-primary1">
-            Apply featured Jobs
-          </p>
+        <div className=" mt-2  ">
+          <div className="flex justify-center ">
+            <button className="flex items-center gap-2 px-6 py-2 rounded-full bg-[#3ecf8e] hover:bg-[#2ebd6b] transition-colors duration-200 text-white font-semibold text-lg">
+              <PiSparkleFill size={28} />
+              Featured Jobs
+            </button>
+          </div>
 
           <FeaturedJob />
         </div>
