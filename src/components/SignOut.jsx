@@ -18,17 +18,29 @@ const SignOut = () => {
   };
 
   return (
-    <div className="flex gap-2 m-4">
-      <span>
-        <img src="/logout.svg" alt="user" className="w-8 h-8 rounded-full" />
+    <button
+      onClick={handleSignOut}
+      className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200 group"
+    >
+      <div className="w-8 h-8 flex items-center justify-center">
+        <svg
+          className="w-5 h-5 text-gray-400 group-hover:text-red-500 transition-colors"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+          />
+        </svg>
+      </div>
+      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+        Sign Out
       </span>
-      <button
-        onClick={handleSignOut}
-        className="  rounded-2xl border  border-[#ff0000] py-1 px-2 text-black "
-      >
-        SignOut
-      </button>
-    </div>
+    </button>
   );
 };
 
