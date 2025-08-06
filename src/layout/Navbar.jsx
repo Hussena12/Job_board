@@ -55,7 +55,7 @@ const Navbar = () => {
             </div>
           </nav>
 
-          <div className="md:hidden flex  items-center text-3xl mx-2   ">
+          {/* <div className="md:hidden flex  items-center text-3xl mx-2   ">
             <button
               className={isOpen ? "dark:text-gray-200" : ""}
               onClick={() => setIsOpen(!isOpen)}
@@ -84,7 +84,7 @@ const Navbar = () => {
                 )}
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       </header>
 
