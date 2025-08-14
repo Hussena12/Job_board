@@ -1,22 +1,45 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc"; // You're using the SWC plugin, that's fine
-import path from "path"; // Keep this import, it's used for your '@' alias
+import react from "@vitejs/plugin-react-swc";
+import { fileURLToPath } from "url"; // Modern alternative to __dirname
+import { dirname, resolve } from "path";
+import { visualizer } from "rollup-plugin-visualizer";
+import viteCompression from "vite-plugin-compression";
+
+// Get equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({ open: true, gzipSize: true, brotliSize: true }),
+    viteCompression(),
+  ],
   server: {
     historyApiFallback: true,
   },
-  optimizeDeps: {
-    include: ["novel"],
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes("node_modules")) {
+            if (id.includes("react") || id.includes("react-dom")) {
+              return "vendor-react";
+            }
+            if (id.includes("react-router")) {
+              return "vendor-router";
+            }
+            return "vendor";
+          }
+        },
+      },
+    },
   },
   resolve: {
     alias: {
-      // Your existing alias
-      "@": path.resolve(__dirname, "./src"),
-      // --- ADD THIS NEW ALIAS FOR source-map-js ---
-      "source-map-js": path.resolve(__dirname, "./src/utils/empty-module.js"), // Adjust path to your empty-module.js
-      // --- END ADDITION ---
+      "@": resolve(__dirname, "./src"),
+      "source-map-js": resolve(__dirname, "./src/utils/empty-module.js"),
     },
   },
 });
