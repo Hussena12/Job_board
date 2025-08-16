@@ -43,7 +43,7 @@ const Dashboard = () => {
   return (
     <>
       <div>qwertyuiop</div>
-      {/* <div className="  flex flex-col h-min-screen">
+      <div className="  flex flex-col h-min-screen">
         <div>hjsvfjhvfv</div>
         <DashNavbar isProfile={isProfile} setIsProfile={setIsProfile} />
         <div className="flex">
@@ -54,7 +54,7 @@ const Dashboard = () => {
           </main>
         </div>
         <MobileBar activePage={activePage} setActivePage={setActivePage} />
-      </div> */}
+      </div>
     </>
   );
 };
