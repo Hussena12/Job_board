@@ -22,6 +22,8 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
+        entryFileNames: `[name]-[hash].js`, // Ensure hashed filenames
+        assetFileNames: `[name]-[hash][extname]`,
         manualChunks: (id) => {
           if (id.includes("node_modules")) {
             if (id.includes("react") || id.includes("react-dom")) {
