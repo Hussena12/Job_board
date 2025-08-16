@@ -1,12 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, Suspense } from "react";
+import { FaPaperPlane } from "react-icons/fa";
+import { Spinner } from "@/components";
+import emailjs from "@emailjs/browser";
 import {
   ContactForm,
   Contact2Form,
   SocialIcon,
   SuccessContact,
-} from "@/components";
-import { FaPaperPlane } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
+} from "@/utils/lazyPages";
 
 const ContactUs = () => {
   const form = useRef();
@@ -74,63 +75,65 @@ const ContactUs = () => {
 
       <div className="lg:w-px bg-gray-200 dark:bg-[#2e2e2e]"></div>
 
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        id="contact-form"
-        className="flex-1 flex justify-center ml:w-[50%]  flex-col items-center "
-      >
-        {isSuccess && (
-          <div className="success-message flex gap-2">
-            <span className="success-check w-6 h-6 rounded-full bg-[#4caf50] text-white ">
-              ✓
-            </span>
-            <p>Thank you! We've received your message.</p>
-          </div>
-        )}
-        <div className="py-4 max-w-[30rem]  rounded-md  ">
-          <Contact2Form label1="First name" label2="Last name" />
-          <ContactForm
-            type="email"
-            name="email"
-            placeholder="example@email.com"
-            label="Email"
-          />
-          <ContactForm
-            type="text"
-            name="text"
-            placeholder="+251923456789"
-            label="Phone Number (optional)"
-          />
-          <div className="flex justify-center">
-            <div className="flex flex-col mt-4 ">
-              <label className="text-gray-600 dark:text-gray-300">
-                Message
-              </label>
+      <Suspense fallback={<Spinner />}>
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          id="contact-form"
+          className="flex-1 flex justify-center ml:w-[50%]  flex-col items-center "
+        >
+          {isSuccess && (
+            <div className="success-message flex gap-2">
+              <span className="success-check w-6 h-6 rounded-full bg-[#4caf50] text-white ">
+                ✓
+              </span>
+              <p>Thank you! We&apos;ve received your message.</p>
+            </div>
+          )}
+          <div className="py-4 max-w-[30rem]  rounded-md  ">
+            <Contact2Form label1="First name" label2="Last name" />
+            <ContactForm
+              type="email"
+              name="email"
+              placeholder="example@email.com"
+              label="Email"
+            />
+            <ContactForm
+              type="text"
+              name="text"
+              placeholder="+251923456789"
+              label="Phone Number (optional)"
+            />
+            <div className="flex justify-center">
+              <div className="flex flex-col mt-4 ">
+                <label className="text-gray-600 dark:text-gray-300">
+                  Message
+                </label>
 
-              <textarea
-                name="message"
-                required
-                className="bg-white dark:border-[#b0b0b010]   border-t-1 focus:outline-none focus:dark:border-[#2e2e2e] dark:bg-[#171717] dark:text-gray-100 shadow lg:w-[22rem]   xl:w-[25rem] w-[22rem] sm:w-[25rem] px-2 pt-3 pb-16  border-color rounded-md my-1  dark:placeholder-gray-400"
-                placeholder="Type your message here..."
-              />
+                <textarea
+                  name="message"
+                  required
+                  className="bg-white dark:border-[#b0b0b010]   border-t-1 focus:outline-none focus:dark:border-[#2e2e2e] dark:bg-[#171717] dark:text-gray-100 shadow lg:w-[22rem]   xl:w-[25rem] w-[22rem] sm:w-[25rem] px-2 pt-3 pb-16  border-color rounded-md my-1  dark:placeholder-gray-400"
+                  placeholder="Type your message here..."
+                />
+              </div>
+            </div>
+            <div className="mt-4 flex justify-center">
+              <button
+                type="submit"
+                className="bg-[#1F2937] dark:bg-[#000] text-gray-300 dark:text-white shadow lg:w-[22rem] md:w-[18rem] ml:w-[21rem] xl:w-[25rem] w-[22rem] sm:w-[25rem] px-2 py-3 border-t-1 border-color rounded-sm my-1 text-md flex gap-3 justify-center items-center dark:border-[#b0b0b010]"
+              >
+                {isSubmitting ? (
+                  <span className="spinner">Sending...</span>
+                ) : (
+                  "Send Message"
+                )}
+                <FaPaperPlane />
+              </button>
             </div>
           </div>
-          <div className="mt-4 flex justify-center">
-            <button
-              type="submit"
-              className="bg-[#1F2937] dark:bg-[#000] text-gray-300 dark:text-white shadow lg:w-[22rem] md:w-[18rem] ml:w-[21rem] xl:w-[25rem] w-[22rem] sm:w-[25rem] px-2 py-3 border-t-1 border-color rounded-sm my-1 text-md flex gap-3 justify-center items-center dark:border-[#b0b0b010]"
-            >
-              {isSubmitting ? (
-                <span className="spinner">Sending...</span>
-              ) : (
-                "Send Message"
-              )}
-              <FaPaperPlane />
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>{" "}
+      </Suspense>
     </div>
   );
 };

@@ -1,7 +1,8 @@
-import React from "react";
-import { JobList } from "@/components";
-import { SearchBar } from "../components";
+import React, { Suspense } from "react";
+import { SearchBar, Spinner } from "../components";
 import { Footer } from "@/layout";
+
+import { JobList } from "@/utils/lazyPages";
 
 const Jobs = () => {
   return (
@@ -9,7 +10,9 @@ const Jobs = () => {
       <div className="flex justify-center m-6">
         <SearchBar />
       </div>
-      <JobList />
+      <Suspense fallback={<Spinner />}>
+        <JobList />
+      </Suspense>
       <Footer />
     </div>
   );

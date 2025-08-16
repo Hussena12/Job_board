@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { lazy, Suspense, useReducer } from "react";
 import {
   AuthFormInput,
   AuthHeader,
@@ -7,9 +7,11 @@ import {
 } from "@/components/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { SignImage } from "@/components";
 import { userAuth } from "@/contexts/AuthContextProvider";
 import { supabase } from "@/supabaseClient";
+import { Spinner } from "@/components";
+
+export const SignImage = lazy(() => import("@/components/SignImage"));
 
 const initialState = {
   email: "",
@@ -77,7 +79,9 @@ const Login = () => {
 
   return (
     <div className="min-h-screen md:flex">
-      <SignImage />
+      <Suspense fallback={<Spinner />}>
+        <SignImage />
+      </Suspense>
       <form
         onSubmit={handleSignIn}
         className="  relative min-h-screen w-full md:w-[40%]  "
