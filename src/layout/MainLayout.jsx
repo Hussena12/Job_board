@@ -1,7 +1,7 @@
 import React from "react";
 import { useStateContext } from "@/contexts/useStateContext";
 import Navbar from "./Navbar";
-import { SpeedInsights } from "@vercel/speed-insights";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const MainLayout = ({ children, shouldHideNavbar }) => {
   const { currentMode } = useStateContext();
