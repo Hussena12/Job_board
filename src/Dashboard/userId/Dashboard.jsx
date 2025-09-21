@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { DashNavbar, MyPostedJob } from "..";
-import { Home } from "../../pages";
-import { Jobs, PostJob } from "@/pages";
+import { Home, Jobs, PostJob } from "@/pages";
 import { MobileBar, Profile, SideBar } from "..";
-import SavedPage from "../userId/SavedPage";
+import SavedPage from "../userId/SavedPagew2";
 import { userAuth } from "@/contexts/AuthContextProvider";
 import { supabase } from "@/supabaseClient";
 
@@ -43,7 +42,9 @@ const Dashboard = () => {
 
   return (
     <>
+      <div>qwertyuiop</div>
       <div className="  flex flex-col h-min-screen">
+        <div>hjsvfjhvfv</div>
         <DashNavbar isProfile={isProfile} setIsProfile={setIsProfile} />
         <div className="flex">
           <SideBar activePage={activePage} setActivePage={setActivePage} />
@@ -52,7 +53,7 @@ const Dashboard = () => {
             {isProfile && <Profile />}
           </main>
         </div>
-        <MobileBar activePage={activePage} setActivePage={setActivePage} />{" "}
+        <MobileBar activePage={activePage} setActivePage={setActivePage} />
       </div>
     </>
   );
