@@ -23,3 +23,5 @@ export const useCompanySalary = (companyName) => {
 
   return { data, loading, error };
 };
+
+

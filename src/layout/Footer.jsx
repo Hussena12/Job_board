@@ -106,6 +106,7 @@ const Footer = () => {
             )}
             {isToggled && <ThemeToggle />}
           </span>
+          <button>Click me</button>
         </div>
       </div>
     </div>
